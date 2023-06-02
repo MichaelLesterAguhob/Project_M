@@ -1,2 +1,2 @@
 # Project_M
-This will be my Projects Storage for my Porfolio
+This will be my Porfolio and Storage for my projects and future projects.
