@@ -1,0 +1,33 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand{
+    letter-spacing: 5px;
+}
+
+#navbarNav{
+    word-spacing: 20px;
+}
+
+#main_container{
+    margin-top: 57px;
+    height: 90vh;
+}
+
+#footer{
+    text-align: center;
+    margin-top: 2px;
+    min-height: 200px;
+}
+
+@media (max-width:500px)
+{
+    .col{
+        display: block;
+        width: 100%;
+    }
+}
+    
