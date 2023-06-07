@@ -49,9 +49,11 @@ a{
     text-align: center;
     margin-top: 1px;
     min-height: 200px;
+    padding-bottom: 10px;
 }
 .connect, .project_link{
     margin: auto;
+    line-height: 30px;
 }
 #connect span{
     font-size: small;
