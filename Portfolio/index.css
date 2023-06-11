@@ -5,6 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 ::-webkit-scrollbar{
+    height: 0px;
     width: 10px;
     background-color:  #212529;
 }
@@ -131,12 +132,12 @@ a{
     min-height: 200px;
     padding-bottom: 10px;
 }
-.connect, .project_link{
+.connect, .project_link, .contact{
     margin: auto;
     line-height: 25px;
     margin-bottom: 15px;
 }
-#connect span{
+#connect span, #contact span{
     font-size: small;
 }
 .project_link{
@@ -147,7 +148,7 @@ a{
 .fixed{
     font-size: 35px;
     position: fixed;
-    bottom: 15px;
+    bottom: 30px;
     right: 15px;
 }
 
