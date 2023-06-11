@@ -35,29 +35,94 @@ a{
 /* MAIN CONTENT */
 #main_container{
     margin-top: 57px;
-    max-height: 90vh;
+    max-height: 95vh;
     padding: 0;
     overflow: visible;
 }
 /* .col{
     border: 1px solid aliceblue;
 } */
-#col7{
-    display: flex;
-    align-items: center;
+#photo{
+    height: 100%;
 }
-#col7 h1{
-    width: 100%;
-    text-align: center;
+#text{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.myname{
+    position: relative;
+    text-align: left;
+    font-size: 2em;
+    font-family:monospace;
+    width:fit-content;
+}
+.typewriter2{
+    position: relative;
+    text-align: left;
+    font-size: 4em;
+    font-family:monospace;
+    width:fit-content;
+}
+.bi-laptop{
+    font-size: .8em;
 }
 .img{
     max-width: 100%;
-    min-width: 300px;
-    height:90vh;
+    height:92vh;
     margin-left: 0;
     background-size: cover;
 }
+@media (max-width:700px){
+    #photo_text{
+    position: relative;
+    }
+    #photo{
+        width: 100%;
+    }
+    #text{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    .myname{
+        width: 100%;
+        text-align: center;
+        margin-left: 10px;
+        font-size: 1.08em;
+    }
+    .typewriter2{
+        width: 100%;
+        text-align: center;
+        margin-left: 10px;
+        font-size: 1.8em;
+    }
+}
 
+@media (min-width:1078px){
+    /* typing effect */
+    .typewriter2::after{
+        content: '|';
+        position: absolute;
+        right: 0;
+        color: aliceblue;
+        background-color: #212529;
+        width: 100%;
+        animation: typing 3s steps(14) alternate infinite,
+        blinking 2s infinite;
+    }
+    @keyframes typing{
+        to{
+            width: 0%;
+        }
+    }
+    @keyframes blinking {
+        50%{
+            color: transparent;
+        }
+    }
+}
 
 /* FOOTER */
 #footer{ 
@@ -80,7 +145,7 @@ a{
 
 /*  */
 .fixed{
-    font-size: 40px;
+    font-size: 35px;
     position: fixed;
     bottom: 15px;
     right: 15px;
