@@ -1,0 +1,71 @@
+
+body{
+    background-color: #700d6b;
+    color: aliceblue;
+}
+
+.container{
+    min-height: 85vh;
+}
+
+.login{
+    min-height: 400px;
+    margin: auto;
+    width: 600px;
+    padding: 2px;
+    border-radius: 7px;
+}
+
+@media (max-width:360px)
+{
+    .login{
+    margin: auto;
+    width: 99%;
+    }
+    th, .lbl{
+        display: none;
+    }
+    td{
+        padding-top: 30px; 
+    }
+    .tdInput{
+        column-span: 2;
+    }
+}
+@media (max-width:540px)
+{
+    .login{
+    margin: auto;
+    width: 98%;
+    }
+}
+@media (max-width:798px)
+{
+    .login{
+    margin: auto;
+    width: 98%;
+    }
+}
+
+table{
+    width: 98%;
+    margin: auto;
+}
+
+.lbl{
+    font-size: larger;
+    text-align: left;
+}
+
+input{
+    width: 100%;
+}
+
+.btn{
+    width: 40%;
+}
+
+#btn{
+    column-span: 2;
+}
+

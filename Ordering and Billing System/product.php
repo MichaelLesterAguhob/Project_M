@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="item">
-                    <a href=""><i class="fa-solid fa-user"></i></a>
+                    <a href="#"><i class="fa-solid fa-user"></i></a>
                 </div>
 
             </div>
@@ -59,7 +59,7 @@
                         </div>
                        
                         <div class="modal-line">
-                            <i class="fa-solid fa-user"></i><a href="/about">Account</a>
+                            <i class="fa-solid fa-user"></i><a href="#">Account</a>
                         </div>          
                         
                     </div>
@@ -150,7 +150,8 @@
                                         class="form-control"
                                         placeholder="Category"
                                         name="productCategory"
-                                        id="productCategory">
+                                        id="productCategory"
+                                        value="UNSPECIFIED">
                           </div>
 
                           <div class="text-center mb-3">

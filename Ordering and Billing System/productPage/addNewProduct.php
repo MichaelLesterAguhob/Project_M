@@ -6,6 +6,10 @@ try
     global $con;
     $prodName = strtoupper($_POST['productName']);
     $category = strtoupper($_POST['productCategory']);
+    if($category == "")
+    {
+        $category = "UNSPECIFIED";
+    }
     $b1t1 = strtoupper($_POST['b1t1Holder']);
     $stat = "AVAILABLE";
 
@@ -21,7 +25,7 @@ if($result)
 }
 else
 {
-    echo ('Unknown Error Occured in Query');
+    echo ('Unknown Error Occured in Query'); 
 }
     
 }
