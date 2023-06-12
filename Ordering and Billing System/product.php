@@ -1,11 +1,27 @@
 
 <?php 
 session_start();
-if(!isset($_SESSION['username']))
-{
+$user = "";
+$admin = "";
+if (!isset($_SESSION['username'])) {
     header('location:login.php');
 }
 
+if($_SESSION['user'] == 'admin')
+{
+    $user = '<div class="modal-line">
+                <i class="fa-sharp fa-solid fa-lock"></i>
+                <a href="admin.php">Admin</a>
+            </div>';
+    $admin = '<div class="item">
+                <a href="admin.php">Admin</a>
+             </div>';
+}
+else
+{
+    $user = "";
+    $admin = '';
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +55,8 @@ if(!isset($_SESSION['username']))
                     <a href="orderingPage.php">Home</a>
                 </div>
                 
+                <?php echo $admin;?>
+
                 <div class="item"> 
                     <a href="logout.php">Logout</a>
                 </div>
@@ -71,7 +89,9 @@ if(!isset($_SESSION['username']))
                         <div class="modal-line">
                             <i class="fa-solid fa-shop"></i><a href="orderingPage.php">Home</a>
                         </div>
-                        
+
+                        <?php echo $user;?>
+
                         <div class="modal-line">
                             <i class="fa-solid fa-user"></i><a href="accounts.php">Account</a>
                         </div>          

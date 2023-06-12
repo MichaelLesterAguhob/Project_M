@@ -1,10 +1,21 @@
 <?php
 session_start();
-
+$user = "";
 if (!isset($_SESSION['username'])) {
     header('location:login.php');
 }
 
+if($_SESSION['user'] == 'admin')
+{
+    $user = '<div class="modal-line">
+                <i class="fa-sharp fa-solid fa-lock"></i>
+                <a href="admin.php">Admin</a>
+            </div>';
+}
+else
+{
+    $user = "";
+}
 ?>
 
 <!DOCTYPE html>
@@ -112,12 +123,14 @@ if (!isset($_SESSION['username'])) {
                                 <a href="product.php">Products</a>
                             </div>
 
+                            <?php echo $user;?>
+
                             <div class="modal-line">
                                 <i class="fa-solid fa-user"></i><a href="accounts.php">Account</a>
                             </div>
 
                             <div class="modal-line">
-                                <i class="fa-solid fa-right-from-bracket"></i><a href="logout.php">logout</a>
+                                <i class="fa-solid fa-right-from-bracket"></i><a href="logout.php">LogOut</a>
                             </div>
 
                         </div>

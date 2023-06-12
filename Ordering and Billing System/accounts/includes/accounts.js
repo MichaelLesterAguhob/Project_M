@@ -67,7 +67,7 @@ function createAccount() {
     }
 }
 
-function login()
+function login() 
 {
     let username = $('#username').val();
     let password = $('#password').val();

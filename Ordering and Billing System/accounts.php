@@ -1,7 +1,26 @@
 <?php
 session_start();
+$user = "";
+$admin = "";
+
 if (!isset($_SESSION['username'])) {
     header('location:login.php');
+}
+
+if($_SESSION['user'] == 'admin')
+{
+    $user = '<div class="modal-line">
+                <i class="fa-sharp fa-solid fa-lock"></i>
+                <a href="admin.php">Admin</a>
+            </div>';
+    $admin = '<div class="item">
+                <a href="admin.php">Admin</a>
+             </div>';
+}
+else
+{
+    $user = "";
+    $admin = '';
 }
 
 ?>
@@ -13,7 +32,7 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Product Page</title> 
 
     <!-- LINKS -->
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
@@ -24,7 +43,7 @@ if (!isset($_SESSION['username'])) {
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar --> 
     <header>
         <div class="container-fluid">
             <div class="navb-logo">
@@ -38,6 +57,8 @@ if (!isset($_SESSION['username'])) {
                 <div class="item">
                     <a href="orderingPage.php">Home</a>
                 </div>
+
+                <?php echo $admin;?>
 
                 <div class="item">
                     <a href="logout.php">Logout</a>
@@ -71,6 +92,8 @@ if (!isset($_SESSION['username'])) {
                             <div class="modal-line">
                                 <i class="fa-solid fa-shop"></i></i><a href="orderingPage.php">Home</a>
                             </div>
+
+                            <?php echo $user;?>
 
                             <div class="modal-line">
                                 <i class="fa-solid fa-user"></i><a href="accounts.php">Account</a>

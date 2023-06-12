@@ -14,7 +14,7 @@
    {  
       session_start();
       $_SESSION['username'] = $username;
-      $_SESSION['user'] = 'admin';
+      $_SESSION['user'] = 'staff';
       $response = json_encode(['status' => 'success', 'html' => 'Login Success Staff']);
    }
    else
