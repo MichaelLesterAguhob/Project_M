@@ -8,17 +8,26 @@ body{
     min-height: 85vh;
 }
 
-.login{
+.login, .create{
     min-height: 400px;
     margin: auto;
     width: 600px;
     padding: 2px;
     border-radius: 7px;
 }
-
+.create input{
+    border:  1px solid lightblue;
+    background-color: transparent;
+    color: aliceblue;
+}
+.login input{
+    border:  1px solid lightblue;
+    background-color: transparent;
+    color: aliceblue;
+}
 @media (max-width:360px)
 {
-    .login{
+    .login, .create{
     margin: auto;
     width: 99%;
     }
@@ -34,14 +43,14 @@ body{
 }
 @media (max-width:540px)
 {
-    .login{
+    .login, .create{
     margin: auto;
     width: 98%;
     }
 }
 @media (max-width:798px)
 {
-    .login{
+    .login, .create{
     margin: auto;
     width: 98%;
     }
