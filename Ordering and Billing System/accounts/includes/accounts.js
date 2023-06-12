@@ -66,3 +66,42 @@ function createAccount() {
         $('#msg').html('Incorrect Security Code!').fadeIn(500).fadeOut(2000);
     }
 }
+
+function login()
+{
+    let username = $('#username').val();
+    let password = $('#password').val();
+    if(username == "" || password == "")
+    {
+        $('#msg').html("No Input").fadeIn(500).fadeOut(2000);
+    }
+    else
+    {
+        $.ajax(
+            {
+                url:'accounts/loginAccount.php',
+                method:'post',
+                data:{username:username, password:password},
+                success:function(data)
+                {
+                    data = $.parseJSON(data);
+                    if(data.status == "success")
+                    {
+                        $('#msg').html(data.html).fadeIn(500).fadeOut(2000);
+                        setTimeout(function()
+                        {
+                            window.location.href="orderingPage.php";
+                        },1000);
+                    }
+                    else if(data.status == "failed")
+                    {
+                        $('#msg').html(data.html).fadeIn(500).fadeOut(2000);
+                    }
+                    else
+                    {
+                        $('#msg').html(data).fadeIn(500).fadeOut(2000);
+                    }
+                }
+            })
+    }
+}

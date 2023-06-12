@@ -1,3 +1,13 @@
+
+<?php 
+session_start();
+if(!isset($_SESSION['username']))
+{
+    header('location:login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -28,9 +38,13 @@
                 <div class="item"> 
                     <a href="orderingPage.php">Home</a>
                 </div>
+                
+                <div class="item"> 
+                    <a href="logout.php">Logout</a>
+                </div>
 
                 <div class="item">
-                    <a href="#"><i class="fa-solid fa-user"></i></a>
+                    <a href="accounts.php"><i class="fa-solid fa-user"></i></a>
                 </div>
 
             </div>
@@ -55,13 +69,16 @@
 
                     <div class="modal-body">
                         <div class="modal-line">
-                            <i class="fa-solid fa-shop"></i></i><a href="orderingPage.php">Home</a>
+                            <i class="fa-solid fa-shop"></i><a href="orderingPage.php">Home</a>
                         </div>
-                       
+                        
                         <div class="modal-line">
-                            <i class="fa-solid fa-user"></i><a href="#">Account</a>
+                            <i class="fa-solid fa-user"></i><a href="accounts.php">Account</a>
                         </div>          
                         
+                        <div class="modal-line">
+                        <i class="fa-solid fa-right-from-bracket"></i><a href="logout.php">logout</a>
+                        </div>
                     </div>
                 </div>
             </div>

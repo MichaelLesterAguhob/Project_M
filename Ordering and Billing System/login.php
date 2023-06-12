@@ -23,7 +23,7 @@
                 <tr>
                     <th class="lbl p-3">Username</th>
                     <td class="tdInput">
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input id="username" type="text" class="form-control" placeholder="Username">
                     </td>
                 </tr>
                 <tr>
@@ -40,11 +40,13 @@
                 </tr>
                 <tr>
                     <td id="btn" class="pt-5" colspan="2">
-                        <button class="btn btn-success">Login!</button>
+                        <button onclick="login();" class="btn btn-success">Login!</button>
                         <button class="btn btn-warning">Cancel</button>
                     </td>
                 </tr>
             </table>
+            <br>
+            <span id="msg" class="text-warning"></span>
             <br>
             <a href="createAccount.php" id="create" class="btn mt-3 text-primary" style="width: 80%;">Create Account</a>
         </div>
