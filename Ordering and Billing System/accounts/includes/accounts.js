@@ -1,8 +1,59 @@
 
+$(document).ready(function()
+{   
+    $('#username').focus();
+    $('#uName').focus();
+    // CREATE ACCOUNT KEY UP EVENTS
+    $("#username").on('keyup', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            $('#password').focus();
+        }
+        else if (e.key === 'up' || e.keyCode === 40) {
+            $('#password').focus();
+        }
+    });
+    $("#password").on('keyup', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            $('#create').click();
+        }
+        else if (e.key === 'up' || e.keyCode === 38) {
+            $('#username').focus();
+        }
+    });
+    $("#sc").on('keyup', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            $('#create').click();
+        }
+        else if (e.key === 'up' || e.keyCode === 38) {
+            $('#username').focus();
+        }
+    });
+
+    // LOGIN KEY UP EVENTS
+    $("#uName").on('keyup', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            $('#uPass').focus();
+        }
+        else if (e.key === 'up' || e.keyCode === 40) {
+            $('#uPass').focus();
+        }
+    });
+    $("#uPass").on('keyup', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            $('#login').click();
+        }
+        else if (e.key === 'up' || e.keyCode === 38) {
+            $('#uName').focus();
+        }
+    });
+});
+
+// Showing Hiding sec code
 var stat = 0;
 $(document).on('click', '#btnAdmin', function () {
     if (stat == 0) {
         $('#asc').css('display', 'table-row');
+        $('#sc').focus();
         stat = 1
     }
     else if (stat == 1) {
@@ -11,7 +62,7 @@ $(document).on('click', '#btnAdmin', function () {
     }
 })
 
-//showing and hidingf password in input field
+//showing and hiding password in input field
 var pass = 0;
 $(document).on('click', '#showPass', function () {
     if (pass == 0) {
@@ -24,6 +75,7 @@ $(document).on('click', '#showPass', function () {
     }
 })
 
+//funtion to create account
 function createAccount() {
     let username = $('#username').val();
     let password = $('#password').val();
@@ -67,10 +119,11 @@ function createAccount() {
     }
 }
 
+// funtion to login account
 function login() 
 {
-    let username = $('#username').val();
-    let password = $('#password').val();
+    let username = $('#uName').val();
+    let password = $('#uPass').val();
     if(username == "" || password == "")
     {
         $('#msg').html("No Input").fadeIn(500).fadeOut(2000);
@@ -105,3 +158,4 @@ function login()
             })
     }
 }
+

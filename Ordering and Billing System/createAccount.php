@@ -55,7 +55,7 @@
                 </tr>
                 <tr>
                     <td id="btn" class="pt-5" colspan="2">
-                        <button class="btn btn-success" onclick="createAccount();">Create!</button>
+                        <button id="create" class="btn btn-success" onclick="createAccount();">Create!</button>
                         <button class="btn btn-warning">Cancel</button>
                     </td>
                 </tr>

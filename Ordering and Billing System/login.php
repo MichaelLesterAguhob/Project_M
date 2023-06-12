@@ -23,13 +23,13 @@
                 <tr>
                     <th class="lbl p-3">Username</th>
                     <td class="tdInput">
-                        <input id="username" type="text" class="form-control" placeholder="Username">
+                        <input id="uName" type="text" class="form-control" placeholder="Username">
                     </td>
                 </tr>
                 <tr>
                     <th class="lbl p-3">Password</th>
                     <td class="tdInput">
-                        <input id="password" type="password" class="form-control" placeholder="Password">
+                        <input id="uPass" type="password" class="form-control" placeholder="Password">
                     </td>
                 </tr>
                 <tr>
@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <td id="btn" class="pt-5" colspan="2">
-                        <button onclick="login();" class="btn btn-success">Login!</button>
+                        <button id="login" onclick="login();" class="btn btn-success">Login!</button>
                         <button class="btn btn-warning">Cancel</button>
                     </td>
                 </tr>

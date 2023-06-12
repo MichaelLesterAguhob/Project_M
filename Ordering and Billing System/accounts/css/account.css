@@ -78,3 +78,6 @@ input{
     column-span: 2;
 }
 
+a{
+    text-decoration: none;
+}
