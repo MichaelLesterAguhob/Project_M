@@ -1,11 +1,11 @@
 <?php
-include_once('includes/connection.php');
+session_start();
 $user = "";
 if (!isset($_SESSION['username'])) {
     header('location:login.php');
 }
 
-if($_SESSION['user'] == 'admin')
+if($_SESSION['loggedin'] == 'admin')
 {
     $user = '<div class="modal-line">
                 <i class="fa-sharp fa-solid fa-lock"></i>

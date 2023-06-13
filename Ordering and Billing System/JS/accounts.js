@@ -67,10 +67,12 @@ var pass = 0;
 $(document).on('click', '#showPass', function () {
     if (pass == 0) {
         $('#password').attr('type', 'text');
+        $('#uPass').attr('type', 'text');
         pass = 1
     }
     else if (pass == 1) {
         $('#password').attr('type', 'password');
+        $('#uPass').attr('type', 'password');
         pass = 0
     }
 })
@@ -95,6 +97,10 @@ function createAccount() {
                     $('#msg').html(data).fadeIn(500).fadeOut(2000);
                     $('#username').val("");
                     $('#password').val("");
+                    setTimeout(function()
+                    {
+                        window.location.href = 'login.php';
+                    },1500)
                 }
             })       
     }
@@ -126,7 +132,7 @@ function login()
     let password = $('#uPass').val();
     if(username == "" || password == "")
     {
-        $('#msg').html("No Input").fadeIn(500).fadeOut(2000);
+        $('#msg').html("No Input");
     }
     else
     {
@@ -137,7 +143,19 @@ function login()
                 data:{username:username, password:password},
                 success:function(data)
                 {
-                        $('#msg').html(data).fadeIn(500).fadeOut(2000);
+                    data = $.parseJSON(data);
+                    if(data.status == 'success')
+                    {
+                        window.location.href = data.text;
+                    }
+                    else if(data.status == 'failed')
+                    {
+                        $('#msg').html(data.text);
+                    }
+                    else if(data.status == 'NoInput')
+                    {
+                        $('#msg').html(data.text);
+                    }               
                 }
             })
     }

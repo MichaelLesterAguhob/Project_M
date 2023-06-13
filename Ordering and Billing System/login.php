@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,23 +20,24 @@
     <div class="container mt-5">
         <h1 class="text-center mb-5">Login</h1>
         <div class="login text-center border">
+
             <table class="mt-3">
                 <tr>
                     <th class="lbl p-3">Username</th>
                     <td class="tdInput">
-                        <input id="uName" type="text" class="form-control" placeholder="Username">
+                        <input type="text" id="uName" class="form-control" placeholder="Username">
                     </td>
                 </tr>
                 <tr>
                     <th class="lbl p-3">Password</th>
                     <td class="tdInput">
-                        <input id="uPass" type="password" class="form-control" placeholder="Password">
+                        <input type="password" id="uPass" class="form-control" placeholder="Password">
                     </td>
                 </tr>
                 <tr>
                     <th class="lbl p-3" style="text-align: right;"><span class="text-muted" style="font-size:12px;">Show Password</span></th>
                     <td style="text-align: left;">
-                        <button id="showPass" class="btn btn-primary btn-sm" style="font-size:12px; width:fit-content;"><i class="fa-solid fa-eye"></i></button>
+                        <button id="showPass" type="button" class="btn btn-primary btn-sm" style="font-size:12px; width:fit-content;"><i class="fa-solid fa-eye"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -45,6 +47,7 @@
                     </td>
                 </tr>
             </table>
+          
             <br>
             <span id="msg" class="text-warning"></span>
             <br>
