@@ -4,6 +4,6 @@
 
 <!-- orders javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="completedOrders/includes/completedOrders.js"></script>
+<script src="JS/completedOrders.js"></script>
 
 </div>

@@ -52,7 +52,7 @@
 
                                 <div class="header-body p-2">
 
-                                    <img src="productPage/uploads/'.$row['images'].'" alt="milktea" class="productImage">
+                                    <img src="uploads/'.$row['images'].'" alt="milktea" class="productImage">
 
                                     <p class="card-text">'.$row['buy1_take1'].'</p>
 

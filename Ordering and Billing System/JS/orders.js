@@ -8,7 +8,7 @@ function viewOrders()
 {
     $.ajax(
         {
-            url:'orders/viewOrders.php',
+            url:'viewOrders.php',
             method:'post',
             success: function(data)
             {
@@ -31,7 +31,7 @@ function minOrderNo()
 {
     $.ajax(
         {
-            url:'orders/minOrderNo.php',
+            url:'minOrderNo.php',
             method:'post',
             success: function(data)
             {
@@ -113,7 +113,7 @@ function prepareOrder()
     
     $.ajax(
         {
-            url:'orders/prepare.php',
+            url:'prepare.php',
             method:'post',
             data:{prepare:orderToPrepare},
             success: function(output)
@@ -133,10 +133,10 @@ function cancelOrder()
     
     $.ajax(
         {
-            url:'orders/cancel.php',
+            url:'cancel.php',
             method:'post',
             data:{cancelOrder:orderToCancel},
-            success: function(data)
+            success: function(data) 
             {
                 $('#confirmModal').modal('toggle');
                 $('#mmMsg').text(data);

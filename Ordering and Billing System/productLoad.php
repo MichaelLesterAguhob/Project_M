@@ -34,7 +34,7 @@
                                     class="prodRow">
                                     <td class="hideId">'.$row['ID'].'</td>
 
-                                    <td><img src="productPage/uploads/'.$row['images'].'" class="displayedImage"></td>
+                                    <td><img src="uploads/'.$row['images'].'" class="displayedImage"></td>
 
                                     <td>'.$row['names'].'</td>
 

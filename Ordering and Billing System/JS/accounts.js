@@ -87,7 +87,7 @@ function createAccount() {
     else if (username != "" && password != "" && secCode == "") {
         $.ajax(
             {
-                url: 'accounts/createNewAccount.php',
+                url: 'createNewAccount.php',
                 method: 'post',
                 data: { username: username, password: password, secCode: secCode },
                 success: function (data) 
@@ -101,7 +101,7 @@ function createAccount() {
     else if (username != "" && password != "" && secCode == 2326) {
         $.ajax(
             {
-                url: 'accounts/createNewAccount.php',
+                url: 'createNewAccount.php',
                 method: 'post',
                 data: { username: username, password: password, secCode: secCode },
                 success: function (data) 
@@ -132,28 +132,12 @@ function login()
     {
         $.ajax(
             {
-                url:'accounts/loginAccount.php',
+                url:'loginAccount.php',
                 method:'post',
                 data:{username:username, password:password},
                 success:function(data)
                 {
-                    data = $.parseJSON(data);
-                    if(data.status == "success")
-                    {
-                        $('#msg').html(data.html).fadeIn(500).fadeOut(2000);
-                        setTimeout(function()
-                        {
-                            window.location.href="orderingPage.php";
-                        },1000);
-                    }
-                    else if(data.status == "failed")
-                    {
-                        $('#msg').html(data.html).fadeIn(500).fadeOut(2000);
-                    }
-                    else
-                    {
                         $('#msg').html(data).fadeIn(500).fadeOut(2000);
-                    }
                 }
             })
     }

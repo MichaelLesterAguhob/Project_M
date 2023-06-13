@@ -5,7 +5,7 @@
 
  <!-- orders javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="orders/includes/orders.js"></script>
+<script src="JS/orders.js"></script>
 
 </div>
 

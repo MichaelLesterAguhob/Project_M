@@ -102,7 +102,7 @@ function loadProducts()
 
     $.ajax(
         {
-            url:'orderingPage/loadProducts.php',
+            url:'loadProducts.php',
             method:'post',
             data:{category:catHolder, searchInput:searchInput},
             success:function(data)
@@ -127,7 +127,7 @@ function loadCategory()
 {
     $.ajax(
         {
-            url:'orderingPage/loadCategory.php',
+            url:'loadCategory.php',
             method:'post',
             success: function(data)
             {
@@ -155,7 +155,7 @@ $(document).on('click', '#productCardDisplay', function()
     var prodImg = $(this).attr('data-img');
     var prodBt = $(this).attr('data-bt');
 
-    $('#prodImage').attr('src', 'productPage/uploads/' + prodImg);
+    $('#prodImage').attr('src', 'uploads/' + prodImg);
     $('#prodID').val(prodID);
     $('#prodName').val(prodName);
     $('#b1t1').val(prodBt);
@@ -184,7 +184,7 @@ function loadSizePrice()
 {
     $.ajax(
         {
-            url:'orderingPage/loadSizePrice.php',
+            url:'loadSizePrice.php',
             method: 'post',
             success: function(data)
             {
@@ -207,7 +207,7 @@ function loadPairChoices()
 {
     $.ajax(
         {
-            url: 'orderingPage/loadPairChoices.php',
+            url: 'loadPairChoices.php',
             method:'post',
             success: function(data)
             {
@@ -229,7 +229,7 @@ function loadPairAddOns()
 {
     $.ajax(
         {
-            url: 'orderingPage/loadPairAddOns.php',
+            url: 'loadPairAddOns.php',
             method:'post',
             success: function(data)
             {
@@ -258,7 +258,7 @@ $(document).on('change', '#size', function()
 
         $.ajax(
             {
-                url:'orderingPage/onChangeSize.php',
+                url:'onChangeSize.php',
                 method:'post',
                 data:{size:size},
                 success: function(price)
@@ -369,7 +369,7 @@ function getAoPrice(action)
         var addOnsName = $('#AddOns').val();
         $.ajax(
             {
-                url:'orderingPage/getAoPrice.php',
+                url:'getAoPrice.php',
                 method:'post',
                 data:{addOnsname:addOnsName},
                 success: function(data)
@@ -384,7 +384,7 @@ function getAoPrice(action)
         var addOnsName = $('#AddOns2').val();
         $.ajax(
             {
-                url:'orderingPage/getAoPrice.php',
+                url:'getAoPrice.php',
                 method:'post',
                 data:{addOnsname:addOnsName},
                 success: function(data)
@@ -567,7 +567,7 @@ function orderDone()
         {
             $.ajax(
                 {
-                    url: 'orderingPage/orderDone.php',
+                    url: 'orderDone.php',
                     method:'post',
                     data: {
                            bt:b1t1, 
@@ -623,7 +623,7 @@ function loadTempOrder()
 {
     $.ajax(
         {
-            url: 'orderingPage/loadTempOrder.php',
+            url: 'loadTempOrder.php',
             method: 'post',
             success: function(data)
             {
@@ -646,7 +646,7 @@ function loadOrderNumber()
 {
     $.ajax(
         {
-            url:'orderingPage/loadOrderNumber.php',
+            url:'loadOrderNumber.php',
             mmethod:'post',
             success: function(data)
             {
@@ -660,7 +660,7 @@ function loadTotal()
 {
     $.ajax(
         {
-            url:'orderingPage/loadTotal.php',
+            url:'loadTotal.php',
             mmethod:'post',
             success: function(data)
             {
@@ -696,7 +696,7 @@ function placeOrder()
         {
             $.ajax(
                 {
-                    url:'orderingPage/placeOrder.php',
+                    url:'placeOrder.php',
                     method:'post',
                     data:{orderNo:orderNo, orderTotal:orderTotal, payment:payment},
                     success: function(data)
@@ -748,7 +748,7 @@ function cancelCurrentOrderNow()
 {
     $.ajax(
         {
-            url:'orderingPage/cancelCurrentOrder.php',
+            url:'cancelCurrentOrder.php',
             method:'',
             success: function(data)
             {
@@ -954,4 +954,3 @@ function backToOrdering(action)
         }
     }
 }
-

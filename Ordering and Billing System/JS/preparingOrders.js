@@ -9,7 +9,7 @@ function viewPreparingOrders()
 {
     $.ajax(
         {
-            url:'preparingOrders/viewPreparingOrders.php',
+            url:'viewPreparingOrders.php',
             method:'post',
             success: function(data)
             {
@@ -43,7 +43,7 @@ $(document).on('click', '#orderCompleted', function()
 
     $.ajax(
         {
-            url:'preparingOrders/orderCompleted.php',
+            url:'orderCompleted.php',
             method:'post',
             data:{completedOrder:completedNo},
             success: function(data)

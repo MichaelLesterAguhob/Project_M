@@ -36,7 +36,7 @@ else
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="stylesheet" href="productPage/css/product.css">
+    <link rel="stylesheet" href="css/product.css">
 </head>
 <body>
 
@@ -158,7 +158,7 @@ else
                           >
 
                           <div class="form-group text-center text-light mb-5">
-                                <img src="productPage/uploads/default.png"
+                                <img src="uploads/default.png"
                                     alt="default"
                                     style="width:18rem; height:18rem;" 
                                     class="mb-2 border"
@@ -233,7 +233,7 @@ else
 
                           <div class="form-group text-center text-light mb-5">
                                 
-                                <img src="productPage/uploads/default.png"
+                                <img src="uploads/default.png"
                                     alt="default"
                                     style="width:13rem; height:13rem;" 
                                     class="mb-2 border"
@@ -770,7 +770,7 @@ else
     <!-- JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="productPage/includes/productScript.js"></script>
+    <script src="JS/productScript.js"></script>
         
 
 </body>

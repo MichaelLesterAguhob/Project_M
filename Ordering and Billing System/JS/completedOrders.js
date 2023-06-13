@@ -8,7 +8,7 @@ function viewCompletedOrders()
 {
     $.ajax(
         {
-            url:'completedOrders/viewCompletedOrders.php',
+            url:'viewCompletedOrders.php',
             method:'post',
             success: function(data)
             {

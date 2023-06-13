@@ -1,5 +1,4 @@
 <?php 
-
     $serverName = "localhost";
     $userName = "root";
     $password = "";
@@ -12,5 +11,7 @@
         echo ('PLease check your connection'); 
         die();
     }
+
+    session_start();
 
 ?>

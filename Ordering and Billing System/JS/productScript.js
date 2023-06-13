@@ -128,7 +128,7 @@ function addNewProduct()
       $.ajax(
       {
         type: 'post',
-        url:'productPage/addNewProduct.php',
+        url:'addNewProduct.php',
         data: formData,
         contentType: false,
         processData: false,
@@ -137,7 +137,7 @@ function addNewProduct()
         {
             $('#addMessage').html(data).fadeIn(2000).fadeOut(2000);
             $('#addForm').trigger('reset');
-            $('#imagePreview').attr('src','productPage/uploads/default.png');
+            $('#imagePreview').attr('src','uploads/default.png');
             productLoad();
             $('#prodIdHolder').val("");
         }
@@ -152,7 +152,7 @@ function productLoad()
   
     $.ajax(
       {
-        url:'productPage/productLoad.php',
+        url:'productLoad.php',
         method: 'post',
         success: function(data)
         {
@@ -193,7 +193,7 @@ function selectProd()
 
     $('#deleteID').val(selectedID);
     $('#prodIdHolder').val(selectedID);
-    $('#prodImgEditView').attr('src','productPage/uploads/'+img);
+    $('#prodImgEditView').attr('src','uploads/'+img);
     $('#prodNameHolder').val(name);
     $('#prodCatHolder').val(cat);
     $('#prodBtHolder').val(bt);
@@ -230,7 +230,7 @@ function editProduct()
     let formData = new FormData(editForm);
     $.ajax(
       {
-        url: 'productPage/editProduct.php',
+        url: 'editProduct.php',
         method: 'post',
         data: formData,
         contentType: false,
@@ -240,7 +240,7 @@ function editProduct()
           $('#editMessage').html(data).fadeIn(1000).fadeOut(2000);
           productLoad();
           $('#editForm').trigger('reset');
-          $('#prodImgEditView').attr('src','productPage/uploads/default.png');
+          $('#prodImgEditView').attr('src','uploads/default.png');
           $('#editModal').modal('toggle');
           $('.prodRow').css('background-color','white');
           $('#prodIdHolder').val("");
@@ -258,7 +258,7 @@ function deleteProduct()
 
     $.ajax(
       {
-        url:'productPage/deleteProduct.php',
+        url:'deleteProduct.php',
         method:'post',
         data: {delID:delID},
         success: function(data)
@@ -289,7 +289,7 @@ function addSp()
   {
     $.ajax(
       {
-        url:'productPage/spAdd.php',
+        url:'spAdd.php',
         method:'post',
         data: {size:size, price:price},
         success:function(data)
@@ -310,7 +310,7 @@ function loadSp()
 {
   $.ajax(
     {
-      url:'productPage/spLoad.php',
+      url:'spLoad.php',
       method:'post',
       success:function(data)
       {
@@ -382,7 +382,7 @@ function editSp()
   }
   $.ajax(
     {
-      url: 'productPage/spEdit.php',
+      url: 'spEdit.php',
       method: 'post',
       data: {Id:spIdHolder, size:sizeHolder, price:priceHolder},
       success: function(data)
@@ -419,7 +419,7 @@ function deleteSp()
 
   $.ajax(
     {
-      url:'productPage/spDelete.php',
+      url:'spDelete.php',
       method:'post',
       data: {id:id},
       success: function(data)
@@ -453,7 +453,7 @@ function addNewAo()
   {
     $.ajax(
       {
-        url:'productPage/aoAddNew.php',
+        url:'aoAddNew.php',
         method:'post',
         data: formData,
         contentType: false,
@@ -476,7 +476,7 @@ function addOnsLoad()
 {
   $.ajax(
     {
-      url:'productPage/aoLoad.php',
+      url:'aoLoad.php',
       method:'post',
       success: function(data)
       {
@@ -537,7 +537,7 @@ function editAo()
   $.ajax(
     {
 
-      url:'productPage/aoEdit.php',
+      url:'aoEdit.php',
       method:'post',
       data:{id:id, name:name, price:price},
       success: function(data)
@@ -574,7 +574,7 @@ function deleteAo()
 
   $.ajax(
     {
-      url:'productPage/aoDelete.php',
+      url:'aoDelete.php',
       method:'post',
       data:{id:id},
       success:function(data)

@@ -11,7 +11,7 @@
     <!-- icon -->
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <!-- css -->
-    <link rel="stylesheet" href="accounts/css/account.css">
+    <link rel="stylesheet" href="css/account.css">
 </head>
 
 <body>
@@ -56,7 +56,7 @@
     <!-- JAVASCRIPT -->
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="accounts/includes/accounts.js"></script>
+    <script src="JS/accounts.js"></script>
 
 </body>
 

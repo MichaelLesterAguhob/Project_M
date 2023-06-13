@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once('includes/connection.php');
 $user = "";
 if (!isset($_SESSION['username'])) {
     header('location:login.php');
@@ -31,12 +31,12 @@ else
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="stylesheet" href="orderingPage/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- orders - preparing - completed - css -->
-    <link rel="stylesheet" href="orders/css/orders.css">
-    <link rel="stylesheet" href="preparingOrders/css/preparingOrders.css">
-    <link rel="stylesheet" href="completedOrders/css/completedOrders.css">
+    <link rel="stylesheet" href="css/orders.css">
+    <link rel="stylesheet" href="css/preparingOrders.css">
+    <link rel="stylesheet" href="css/completedOrders.css">
 </head>
 
 <body>
@@ -467,7 +467,7 @@ else
     <!-- JAVASCRIPT -->
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="orderingPage/includes/orderingPage.js"></script>
+    <script src="JS/orderingPage.js"></script>
 
 </body>
 

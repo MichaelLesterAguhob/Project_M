@@ -3,7 +3,6 @@
  include_once('includes/connection.php');
  global $con;
 
- $response = "";
  $username = $_POST['username'];
  $password = $_POST['password'];
  
@@ -12,10 +11,9 @@
    $data = mysqli_fetch_assoc($result);
    if($data != null)
    {  
-      session_start();
       $_SESSION['username'] = $username;
       $_SESSION['user'] = 'staff';
-      $response = json_encode(['status' => 'success', 'html' => 'Login Success Staff']);
+      echo '<script>window.location.href="orderingPage.php";</script>';
    }
    else
    {
@@ -24,17 +22,16 @@
     $data = mysqli_fetch_assoc($result);
       if($data != null)
       {
-        session_start();
         $_SESSION['username'] = $username;
         $_SESSION['user'] = 'admin';
-        $response = json_encode(['status' => 'success', 'html' => 'Login Success Admin']);
+        echo '<script>window.location.href="orderingPage.php";</script>';
       }
       else
       {
-        $response = json_encode(['status' => 'failed', 'html' => "Account doesn't exist."]);
+        echo "Account doesn't exist.";
       }
    }
 
- echo $response;
+
  
  ?>

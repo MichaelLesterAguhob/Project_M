@@ -6,7 +6,7 @@
 
 <!-- orders javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="preparingOrders/includes/preparingOrders.js"></script>
+<script src="JS/preparingOrders.js"></script>
 
 </div>
 
