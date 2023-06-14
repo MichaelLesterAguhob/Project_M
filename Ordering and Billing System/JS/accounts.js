@@ -115,7 +115,7 @@ function createAccount() {
                     }
                 }
             })       
-    }
+    } 
     else if (username != "" && password != "" && secCode == 2326) {
         $.ajax(
             {

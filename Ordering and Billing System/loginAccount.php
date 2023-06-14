@@ -30,7 +30,7 @@ if($username != "" && $password != "")
         {
             $_SESSION['username'] = $data2['username'];
             $_SESSION['loggedin'] = 'admin';
-            $msg = json_encode(['status'=>'success','text'=>'orderingPage.php']);  
+            $msg = json_encode(['status'=>'success','text'=>'admin.php']);  
         }
         else
         {

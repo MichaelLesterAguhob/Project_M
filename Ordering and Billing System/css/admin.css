@@ -1,0 +1,43 @@
+
+::-webkit-scrollbar{
+    background-color: transparent;
+    height: 7px;
+    width: 7px;
+}
+::-webkit-scrollbar-button{
+    background-color: whitesmoke;
+}
+::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(222, 220, 220);
+}
+
+.col-4, .col-8{
+    border: 1px solid black;
+    height: 85vh;
+    overflow: auto;
+}
+.admin_dashboard{
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+}
+.admin_btn{
+    width: 100%;
+    font-size: 1.5em;
+    background-color: blueviolet;
+}
+#side_bar{
+
+}
+#data_display{
+
+}
+table{
+    width: 100%;
+}

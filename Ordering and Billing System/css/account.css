@@ -4,6 +4,21 @@ body{
     color: aliceblue;
 }
 
+::-webkit-scrollbar{
+    background-color: transparent;
+    height: 7px;
+    width: 7px;
+}
+::-webkit-scrollbar-button{
+    background-color: whitesmoke;
+}
+::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(222, 220, 220);
+}
+
 .container{
     min-height: 85vh;
 }

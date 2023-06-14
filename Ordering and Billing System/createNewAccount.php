@@ -16,7 +16,7 @@
      $result = mysqli_query($con, $query);
      $data = mysqli_fetch_assoc($result);
      if($data != null)
-     {
+     { 
         $response = json_encode(['status'=>'failed','text'=>"Username Already Used."]);
      }
      else
