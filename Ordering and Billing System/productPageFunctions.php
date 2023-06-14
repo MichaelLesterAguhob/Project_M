@@ -6,7 +6,7 @@
         try
         {
             global $con;
-            $productDetails = '';
+            $productDetails = ''; 
             // set static data
             $productDetails .='<table class="table table-striped table-bordered table-hover">
                                 <thead class="bg-dark text-light">

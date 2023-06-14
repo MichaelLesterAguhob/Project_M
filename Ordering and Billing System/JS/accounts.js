@@ -94,13 +94,21 @@ function createAccount() {
                 data: { username: username, password: password, secCode: secCode },
                 success: function (data) 
                 {
-                    $('#msg').html(data).fadeIn(500).fadeOut(2000);
-                    $('#username').val("");
-                    $('#password').val("");
-                    setTimeout(function()
+                    data = $.parseJSON(data);
+                    if(data.status == "success")
                     {
-                        window.location.href = 'login.php';
-                    },1500)
+                        $('#msg').html(data.text).fadeIn(500).fadeOut(2000);
+                        $('#username').val("");
+                        $('#password').val("");
+                        setTimeout(function()
+                        {
+                            window.location.href = 'login.php';
+                        },1500)
+                    }
+                    else if(data.status == "failed")
+                    {
+                        $('#msg').html(data.text).fadeIn(500).fadeOut(2000);
+                    }
                 }
             })       
     }
@@ -112,11 +120,23 @@ function createAccount() {
                 data: { username: username, password: password, secCode: secCode },
                 success: function (data) 
                 {
-                    $('#msg').html(data).fadeIn(500).fadeOut(2000);
-                    $('#username').val("");
-                    $('#password').val("");
-                    $('#sc').val("");
-                    $('#btnAdmin').click();
+                    data = $.parseJSON(data);
+                    if(data.status == "success")
+                    {
+                        $('#msg').html(data).fadeIn(500).fadeOut(2000);
+                        $('#username').val("");
+                        $('#password').val("");
+                        $('#sc').val("");
+                        $('#btnAdmin').click();
+                        setTimeout(function()
+                        {
+                            window.location.href = 'login.php';
+                        },1500)
+                    }
+                    else if(data.status == "failed")
+                    {
+                        $('#msg').html(data.text).fadeIn(500).fadeOut(2000);
+                    }
                 }
             })
     }

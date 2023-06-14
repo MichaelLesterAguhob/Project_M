@@ -15,7 +15,7 @@
    $data = mysqli_fetch_assoc($result);
    if($data != null)
    {
-      $response = "Username Already Used.";
+      $response = json_encode(['status'=>'failed','text'=>"Username Already Used."]);
    }
    else
    {
@@ -23,7 +23,7 @@
       $result = mysqli_query($con, $query);
       if($result)
       {
-         $response = "Staff Account Created";
+         $response = json_encode(['status'=>'success','text'=>"Staff Account Created"]);
       }
    }
    
@@ -35,7 +35,7 @@
    $data = mysqli_fetch_assoc($result);
    if($data != null)
    {
-      $response = "Username Already Used.";
+      $response = json_encode(['status'=>'failed','text'=>"Username Already Used."]);
    }
    else
    {
@@ -43,7 +43,7 @@
       $result = mysqli_query($con, $query);
       if($result)
       {
-         $response = "Admin Account Created";
+         $response = json_encode(['status'=>'success','text'=>"Admin Account Created"]);
       }
    }
  }

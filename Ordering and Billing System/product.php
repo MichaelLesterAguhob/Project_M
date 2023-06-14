@@ -218,7 +218,7 @@ else
     <!-- EDIT MODAL -->
     <div class="modal fade" id="editModal">
         <div class="modal-dialog" id="addModalDialog">
-            <div class="modal-content" id="addModalContent">
+            <div class="modal-content" id="addModalContent"> 
 
                 <div class="modal-header bg-light mt-2 text-center" id="addModalHeader">
                     <h3 class="text-dark mt-1 mb-2 text-center">Edit Product Details</h3>
