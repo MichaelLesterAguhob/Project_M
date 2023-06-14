@@ -25,16 +25,11 @@ try
     $res2 = mysqli_query($con, $qry2);
     $sum = mysqli_fetch_array($res2);
     
-    $data .= '
+    $data .= '<tfooter>
         <tr>
-                <td></td>
-                <th style="text-align:left; font-size:larger;">Total Sold : &#8369; '.$sum[0].'</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <th colspan="6"><h4>Total Sold : &#8369; '.$sum[0].'</h4></th>
         </tr>
-                ';
+        </tfooter>';
     echo json_encode(['status'=>'success', 'html'=>$data]);
 }
 catch(Exception $ex)

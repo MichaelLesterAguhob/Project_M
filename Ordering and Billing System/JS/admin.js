@@ -1,5 +1,5 @@
 
-loadSold();
+// loadSold();
 function loadSold()
 {
     $.ajax(

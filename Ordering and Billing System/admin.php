@@ -114,7 +114,7 @@ if ($_SESSION['loggedin'] == 'admin') {
             <h3 class="text-light text-center admin_dashboard">Admin Dashboard</h3>
             <div class="col-4" id="side_bar">
                 <div class="admin_menu">
-                    <button class="btn btn-large btn-primary mt-3 admin_btn">View Sold</button>
+                    <button class="btn btn-large btn-primary mt-3 admin_btn" onclick="loadSold();">View Sold</button>
                 </div>
                 <div class="admin_menu">
                     <button class="btn btn-large btn-primary mt-3 admin_btn">User Accounts</button>
