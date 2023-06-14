@@ -16,7 +16,7 @@ body{
     border-radius: 7px;
 }
 .create input{
-    border:  1px solid lightblue;
+    border:  1px solid lightblue; 
     background-color: transparent;
     color: aliceblue;
 }
@@ -80,4 +80,13 @@ input{
 
 a{
     text-decoration: none;
+}
+
+#uName, #username, #uPass, #password, #sc{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+    background-color: transparent;
+    color: aliceblue;
 }

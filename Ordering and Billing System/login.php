@@ -43,7 +43,7 @@
                 <tr>
                     <td id="btn" class="pt-5" colspan="2">
                         <button id="login" onclick="login();" class="btn btn-success">Login!</button>
-                        <button class="btn btn-warning">Cancel</button>
+                        <button onclick="cancel();" class="btn btn-warning">Cancel</button>
                     </td>
                 </tr>
             </table>

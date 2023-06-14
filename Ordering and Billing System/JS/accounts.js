@@ -109,6 +109,10 @@ function createAccount() {
                     {
                         $('#msg').html(data.text).fadeIn(500).fadeOut(2000);
                     }
+                    else if(data.status == "error")
+                    {
+                        alert(data.text);
+                    }
                 }
             })       
     }
@@ -123,7 +127,7 @@ function createAccount() {
                     data = $.parseJSON(data);
                     if(data.status == "success")
                     {
-                        $('#msg').html(data).fadeIn(500).fadeOut(2000);
+                        $('#msg').html(data.text).fadeIn(500).fadeOut(2000);
                         $('#username').val("");
                         $('#password').val("");
                         $('#sc').val("");
@@ -137,12 +141,29 @@ function createAccount() {
                     {
                         $('#msg').html(data.text).fadeIn(500).fadeOut(2000);
                     }
+                    else if(data.status == "error")
+                    {
+                        alert(data.text);
+                    }
                 }
             })
     }
     else {
         $('#msg').html('Incorrect Security Code!').fadeIn(500).fadeOut(2000);
     }
+}
+
+function cancel()
+{
+    $('#username').val("");
+    $('#uName').val("");
+    $('#password').val("");
+    $('#uPass').val("");
+    $('#sc').val("");
+    setTimeout(function()
+    {
+        window.location.href = 'login.php';
+    },1000)
 }
 
 // funtion to login account

@@ -25,7 +25,7 @@
         <div class="create text-center border">
             <table class="mt-3">
                 <tr>
-                    <th class="lbl p-3">Username</th>
+                    <th class="lbl p-3">Username</th> 
                     <td class="tdInput">
                         <input type="text" id="username" class="form-control" placeholder="Username">
                     </td>
@@ -52,7 +52,7 @@
                 <tr>
                     <td id="btn" class="pt-5" colspan="2">
                         <button id="create" class="btn btn-success" onclick="createAccount();">Create!</button>
-                        <button class="btn btn-warning">Cancel</button>
+                        <button onclick="cancel();" class="btn btn-warning">Cancel</button>
                     </td>
                 </tr>
             </table>
