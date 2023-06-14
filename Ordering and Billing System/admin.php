@@ -117,14 +117,15 @@ if ($_SESSION['loggedin'] == 'admin') {
                     <button class="btn btn-large btn-primary mt-3 admin_btn" onclick="loadSold();">View Sold</button>
                 </div>
                 <div class="admin_menu">
-                    <button class="btn btn-large btn-primary mt-3 admin_btn">User Accounts</button>
+                    <button class="btn btn-large btn-primary mt-3 admin_btn" onclick="loadUserAccounts();">User Accounts</button>
                 </div>
                 <div class="admin_menu">
-                    <button class="btn btn-large btn-primary mt-3 admin_btn">To-Confirm Accounts</button>
+                    <button class="btn btn-large btn-primary mt-3 admin_btn" onclick="loadToConfirmAccounts();">To-Confirm Accounts</button>
                 </div>
             </div>
             <div class="col-8" id="data_display">
-                <div>
+                <div id="sold">
+                    <caption><h5 class="mt-2">Sold Milkteas</h5></caption>
                     <table class="table table-hover table-bordered">
                         <thead class="bg-dark text-light">
                             <tr>
@@ -141,20 +142,33 @@ if ($_SESSION['loggedin'] == 'admin') {
                         </tbody>
                     </table>
                 </div>
-                <div>
-                    <table>
-                        <thead>
-                            
+                <div id="accounts">
+                    <caption><h5 class="mt-2">User Accounts</h5></caption>
+                    <table class="table table-hover table-bordered">
+                        <thead class="bg-dark text-light">
+                            <tr>
+                                <th>ID#</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Admin</th>
+                            </tr>
                         </thead>
                         <tbody id="display_user_accounts">
                             <!-- codes output here -->
                         </tbody>
                     </table>
                 </div>
-                <div>
-                    <table>
-                        <thead>
-                            
+                <div id="confirm_accounts">
+                    <caption><h5 class="mt-2">Confirm Created Accounts</h5></caption>
+                    <table class="table table-hover table-bordered">
+                        <thead class="bg-dark text-light">
+                            <tr>
+                                <th>ID#</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Admin</th>
+                                <th>Actions</th>
+                            </tr>
                         </thead>
                         <tbody id="display_to_confirm_accounts">
                             <!-- codes output here -->

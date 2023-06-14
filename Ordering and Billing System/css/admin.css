@@ -15,7 +15,6 @@
 }
 
 .col-4, .col-8{
-    border: 1px solid black;
     height: 85vh;
     overflow: auto;
 }
@@ -40,4 +39,8 @@
 }
 table{
     width: 100%;
+}
+
+#sold, #accounts, #confirm_accounts{
+    display: none;
 }
