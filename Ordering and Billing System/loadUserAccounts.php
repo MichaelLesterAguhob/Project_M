@@ -14,7 +14,12 @@ try
         <tr>
                 <td>'.$row['ID'].'</td>
                 <td>'.$row['username'].'</td>
-                <td>'.$row['password'].'</td>
+                <td>
+                    <input id="'.$row['ID'].'" class="user_pass" type="password" value="'.$row['password'].'abcdefg" disabled>
+                    <button class="btn_see" data-id="'.$row['ID'].'">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                </td>
                 <td>'.$row['admin'].'</td>
         </tr>
                 ';

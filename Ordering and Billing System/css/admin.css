@@ -31,16 +31,35 @@
     font-size: 1.5em;
     background-color: blueviolet;
 }
-#side_bar{
+.col-8 h5{
+    width: fit-content;
+    padding: 4px;
+    background-color: green;
+    color: aliceblue;
+    border-radius: 4px;
+}   
+/* #side_bar{
 
 }
 #data_display{
 
-}
+} */
 table{
     width: 100%;
 }
 
 #sold, #accounts, #confirm_accounts{
     display: none;
+}
+
+.user_pass{
+    width: 70%;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+}
+
+.btn_see{
+    border: none;
+    background-color: transparent;
 }

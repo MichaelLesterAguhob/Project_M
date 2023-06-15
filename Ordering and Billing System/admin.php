@@ -82,7 +82,7 @@ if ($_SESSION['loggedin'] == 'admin') {
 
                         <div class="modal-header">
                             <img src="icons/logo.png" alt="Logo" class="modal-title fs-5">
-                            <h2 style="display: inline-flex; color: white;">SWEET TEA BOBA</h2>
+                            <h2 style="display: inline-flex; color: white;">SWEETEA BOBA</h2>
                             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -114,13 +114,13 @@ if ($_SESSION['loggedin'] == 'admin') {
             <h3 class="text-light text-center admin_dashboard">Admin Dashboard</h3>
             <div class="col-4" id="side_bar">
                 <div class="admin_menu">
-                    <button class="btn btn-large btn-primary mt-3 admin_btn" onclick="loadSold();">View Sold</button>
+                    <button class="btn btn-large btn-primary mt-3 admin_btn" id="btn_sold" onclick="loadSold();">View Sold</button>
                 </div>
                 <div class="admin_menu">
-                    <button class="btn btn-large btn-primary mt-3 admin_btn" onclick="loadUserAccounts();">User Accounts</button>
+                    <button class="btn btn-large btn-primary mt-3 admin_btn" id="btn_accounts" onclick="loadUserAccounts();">User Accounts</button>
                 </div>
                 <div class="admin_menu">
-                    <button class="btn btn-large btn-primary mt-3 admin_btn" onclick="loadToConfirmAccounts();">To-Confirm Accounts</button>
+                    <button class="btn btn-large btn-primary mt-3 admin_btn" id="btn_confirm_accounts" onclick="loadToConfirmAccounts();">To-Confirm Accounts</button>
                 </div>
             </div>
             <div class="col-8" id="data_display">
@@ -147,7 +147,7 @@ if ($_SESSION['loggedin'] == 'admin') {
                     <table class="table table-hover table-bordered">
                         <thead class="bg-dark text-light">
                             <tr>
-                                <th>ID#</th>
+                                <th>ID</th>
                                 <th>Username</th>
                                 <th>Password</th>
                                 <th>Admin</th>
@@ -163,7 +163,7 @@ if ($_SESSION['loggedin'] == 'admin') {
                     <table class="table table-hover table-bordered">
                         <thead class="bg-dark text-light">
                             <tr>
-                                <th>ID#</th>
+                                <th>ID</th>
                                 <th>Username</th>
                                 <th>Password</th>
                                 <th>Admin</th>
