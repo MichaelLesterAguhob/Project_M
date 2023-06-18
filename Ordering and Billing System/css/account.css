@@ -10,13 +10,13 @@ body{
     width: 7px;
 }
 ::-webkit-scrollbar-button{
-    background-color: whitesmoke;
+    background-color: transparent;
 }
 ::-webkit-scrollbar-corner{
     background-color: transparent;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: rgb(222, 220, 220);
+    background-color: transparent;
 }
 
 .container{
@@ -104,4 +104,30 @@ a{
     border-radius: 0px;
     background-color: transparent;
     color: aliceblue;
+}
+
+/* ACCOUNTS.PHP */
+.table, .acct_td, .acct_th{
+    border: none;
+}
+.acct_th{
+    text-align: right;
+    color: aliceblue;
+    font-size: 2em;
+    line-height: 50px;
+}
+.acct_td{
+    text-align: right;
+    line-height: 50px;
+}
+#acct_td{
+    padding-top: 70px;
+}
+.acct_info{
+    background-color: transparent;
+    border: none;
+    color: aliceblue;
+    font-size: 2em;
+    line-height: 50px;
+    text-align: center;
 }

@@ -202,3 +202,79 @@ function login()
     }
 }
 
+// account.php
+let show_hide = 0
+function loadAccount()
+{
+    if(show_hide == 0)
+    {
+        $.ajax(
+            {
+                url:'loadAccount.php',
+                method:'post',
+                success: function(data)
+                {
+                    data = $.parseJSON(data);
+                    if(data.stat == 'success')
+                    {
+                        $('#user_id').val(data.user_id);
+                        $('#my_username').val(data.username);
+                        $('#my_password').val(data.user_pass);
+                    }
+                    else
+                    {
+                        alert(data.text);
+                    }
+                }
+            })
+        show_hide = 1;
+        $('.hs').text("Hide Details")
+        $('.update').removeAttr("disabled");
+        $('.cancel').removeAttr("disabled");
+    }
+    else
+    {
+        $('#user_id').val("");
+        $('#my_username').val("");
+        $('#my_password').val("");
+        show_hide = 0;
+        $('.hs').text("Show Details")
+        $('.update').attr("disabled", "true");
+        $('.cancel').attr("disabled", "true");
+    }
+}
+
+function updateAccount()
+{
+    if($('#my_username').val() == "" || $('#my_password').val() == "")
+    {
+        $('#messageModalText').html("Fill in all the blanks");
+        $('#messageModal').modal('toggle');
+    }
+    else
+    {
+        let ID = $('#user_id').val();
+        let username =$('#my_username').val();
+        let password =$('#my_password').val();
+        $.ajax(
+            {
+                url:'update_account.php',
+                method:'post',
+                data:{ID:ID, username:username, password:password},
+                success: function(data)
+                {
+                    data = $.parseJSON(data);
+                    if(data.stat == 'success')
+                    {
+                        $('#messageModalText').html(data.text);
+                        $('#messageModal').modal('toggle');
+                        loadAccount();
+                    }
+                    else
+                    {
+                        alert(data.text);
+                    }
+                }
+            })
+    }
+}

@@ -10,7 +10,7 @@
     width: 7px;
 }
 ::-webkit-scrollbar-button{
-    background-color: whitesmoke;
+    background-color: transparent;
 }
 ::-webkit-scrollbar-corner{
     background-color: transparent;

@@ -39,6 +39,7 @@ else
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/account.css">
 </head>
 
 <body>
@@ -111,7 +112,34 @@ else
     </header>
 
     <!-- MAIN CONTENT -->
-
+    <div class="container mt-5 text-center">
+        <h4><i class="far fa-question-circle"></i> You can click on your username or password to edit and update your Account Information.</h4>
+        <hr>
+        <button class="btn btn-lg btn-primary hs" onclick="loadAccount();"> Show Details</button>
+        <table class="table mt-5">
+                <tr>
+                    <th class="acct_th">User ID: </th>
+                    <td class="acct_td"><input type="text" id="user_id" class=" acct_info" disabled></td>
+                </tr>
+                <tr>
+                    <th class="acct_th">Username: </th> 
+                    <td class="acct_td"><input type="text" id="my_username" class="form-control acct_info" ></td>
+                </tr>
+                <tr>
+                    <th class="acct_th">Password: </th>
+                    <td class="acct_td"><input type="password" id="my_password" class="form-control acct_info" ></td>
+                </tr>
+                <tr>
+                    <th class="acct_th"></th>
+                    <td class="acct_td" id="acct_td">
+                        <button class="btn btn-lg btn-success update" onclick="updateAccount();">Update!</button>
+                        <button class="btn btn-lg btn-warning cancel" onclick="loadAccount();">Cancel</button>
+                    </td>
+                </tr>
+            
+        
+        </table>
+    </div>
 
 
     <!-- MESSAGE MODAL -->
@@ -138,8 +166,7 @@ else
     <!-- JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <!-- <script src="JS/productScript.js"></script> -->
-
+    <script src="JS/accounts.js"></script>
 
 </body>
 
