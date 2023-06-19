@@ -23,31 +23,31 @@
       <a class="navbar-brand" href="#">MLCA &lessgtr;</MLCA></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon nav_toggler"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active home_nav" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Skills</a>
+            <a class="nav-link" onclick="show_skills();" href="#">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
+            <a class="nav-link" onclick="show_projects();" href="#">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#">Resume</a>
+            <a class="nav-link " onclick="show_resume();" href="#">Resume</a>
           </li>
         </ul>
-      </div>
+      </div> 
     </div>
   </nav>
   <!-- END OF NAVIGATION -->
 
   <!-- MAIN CONTENT -->
   <div class="container-fluid overflow-auto text-light bg-dark" id="main_container">
-    <div class="row" id="photo_text">
+    <div class="row home_tab" id="photo_text">
       <div class="col col-lg-5" id="photo">
         <img src="Portfolio/img/me.png" alt="my photo" class="img">
       </div>
@@ -55,6 +55,15 @@
         <h3 class="myname"> I'm Michael, I'm a &nbsp;</h3>
         <h1 class="typewriter2">Web Developer <i class="bi bi-laptop"></i> &nbsp;</h1>
       </div>
+    </div>
+    <div class="skills_tab tabs">
+      <h1>Skills tab</h1>
+    </div>
+    <div class="projects_tab tabs">
+      <h1>Project tab</h1>
+    </div>
+    <div class="resume_tab tabs">
+      <h1>Resume tab</h1>
     </div>
   </div>
   <!-- END OF MAIN CONTENT -->
@@ -122,9 +131,13 @@
   <!-- FIXED -->
   <div class="fixed text-light">
     <a href="https://www.facebook.com/messages/t/100017007522009" title="Message MLCA in Facebook"><i
-        class="bi bi-messenger"></i></a>
-
+        class="bi bi-messenger"></i>
+    </a>
   </div>
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="Portfolio/index.js"></script>
 </body>
 
 </html>

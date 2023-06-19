@@ -29,9 +29,8 @@ a{
     letter-spacing: 5px;
 }
 #navbarNav{
-    word-spacing: 20px;
+    word-spacing: 20px; 
 }
-
 
 /* MAIN CONTENT */
 #main_container{
@@ -152,4 +151,8 @@ a{
     right: 15px;
 }
 
-    
+/* page tabs switching */
+.tabs{
+    height: 92vh;
+    display: none;
+}
