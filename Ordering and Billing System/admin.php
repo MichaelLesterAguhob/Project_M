@@ -29,7 +29,7 @@ if ($_SESSION['loggedin'] == 'admin') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Admin Page</title>
 
     <!-- LINKS -->
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
@@ -112,6 +112,7 @@ if ($_SESSION['loggedin'] == 'admin') {
     <div class="container-fluid mt-2">
         <div class="row">
             <h3 class="text-light text-center admin_dashboard">Admin Dashboard</h3>
+            
             <div class="col-4" id="side_bar">
                 <div class="admin_menu">
                     <button class="btn btn-large btn-primary mt-3 admin_btn" id="btn_sold" onclick="loadSold();">View Sold</button>
@@ -122,6 +123,9 @@ if ($_SESSION['loggedin'] == 'admin') {
                 <div class="admin_menu">
                     <button class="btn btn-large btn-primary mt-3 admin_btn" id="btn_confirm_accounts" onclick="loadToConfirmAccounts();">To-Confirm Accounts</button>
                 </div>
+            </div>
+            <div id="side_bar_toggler">
+                <i class="fa-solid fa-less-than lt" style="display: none;"></i> <i class="fa-solid fa-greater-than gt"></i>
             </div>
             <div class="col-8" id="data_display">
                 <div id="sold">

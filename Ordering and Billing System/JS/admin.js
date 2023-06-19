@@ -28,6 +28,10 @@ function loadSold()
                 }
             }
         });
+    if($( window ).width() <= 550)
+    {
+        $('#side_bar_toggler').click();
+    }
 }
 
 //loading all accounts records
@@ -57,6 +61,10 @@ function loadUserAccounts()
                 }
             }
         });
+    if($( window ).width() <= 550)
+    {
+        $('#side_bar_toggler').click();
+    }
 }
 
 // loading accounts to confirm
@@ -86,6 +94,10 @@ function loadToConfirmAccounts()
                 }
             }
         });
+    if($( window ).width() <= 550)
+    {
+        $('#side_bar_toggler').click();
+    }
 }
 
 // to confirm accounts action button confirm
@@ -161,3 +173,39 @@ $(document).on('click','.btn_see', function()
         stat = 0;
     }
 })
+
+let stats = 0;
+$('#side_bar_toggler').on('click', function()
+{
+    if(stats == 0)
+    {
+        $('#side_bar').css('display','inline-block');
+        stats = 1;
+        $('.gt').css('display', 'none');
+        $('.lt').css('display', 'flex');
+        
+    }
+    else
+    {
+        $('#side_bar').css('display','none');
+        stats = 0;
+        $('.lt').css('display', 'none');
+        $('.gt').css('display', 'flex');
+    }
+})
+
+window.addEventListener('resize', resizeFunction);
+
+function resizeFunction()
+{
+    if($(window).width() >= 560)
+    {
+        stats = 1;
+        $('#side_bar').css('display','inline-block');
+    }
+    else
+    {
+        $('#side_bar').css('display','none');
+        stats = 0;
+    }
+}

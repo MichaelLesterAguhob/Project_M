@@ -46,6 +46,8 @@ $(document).ready(function()
             $('#uName').focus();
         }
     });
+
+    
 });
 
 // Showing Hiding sec code
