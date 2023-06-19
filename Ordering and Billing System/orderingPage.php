@@ -158,10 +158,15 @@ else
         </div>
 
         <div class="row" id="orderingDisplay">
-
+        <div id="side_cat">
+        <i class="fa-solid fa-magnifying-glass search_icon"></i><i class="fa-solid fa-less-than lt" style="display: none;"></i> <i class="fa-solid fa-greater-than gt"></i>
+        </div>
+        <div id="side_order">
+        <i class="fa-solid fa-less-than osLt"></i> <i class="fa-solid fa-greater-than osGt" style="display: none;"></i>&nbsp;Order(s)
+        </div>
             <!--||||||||||||||||||||||||  CATEGORY ||||||||||||||||||||||-->
             <div class="col-lg-2 text-center mb-5" id="category">
-
+                <div class="mt-2 mb-4 close_cat"><i class="fa-sharp fa-solid fa-circle-xmark close_cat_icon"></i></div>
                 <div class="card mb-3 text-dark text-center " style="width: 80%;">
 
                     <div class="card-header bg-secondary text-light">
@@ -201,7 +206,7 @@ else
 
 
             <!--||||||||||||||||||||||||  PRODUCTS DISPLAY ||||||||||||||||||||||-->
-            <div class="col-lg-7 mb-5">
+            <div class="col-lg-7 mb-5 prod_display">
                 <h3 class="text-center p-2 bg-secondary text-light" id="milktealbl">
                     Milk Tea
                 </h3>
@@ -362,7 +367,7 @@ else
             </div>
 
             <!--||||||||||||||||||||||||  ORDERS SUMMARY ||||||||||||||||||||||-->
-            <div class="col-lg-3">
+            <div class="col-lg-3 order_summary" id="order_summary">
                 <h3 class="text-center p-2 bg-secondary text-light">Order(s)</h3>
 
                 <div class="row mb-1">

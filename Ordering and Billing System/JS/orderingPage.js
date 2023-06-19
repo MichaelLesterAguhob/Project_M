@@ -23,6 +23,7 @@ $(document).ready(function()
         $('#searchInput').val("");
         $('#categoryFooter').css('display', 'none');
         loadProducts();
+        $('#side_cat').click();
     });
     
     //code for search button
@@ -37,6 +38,7 @@ $(document).ready(function()
             $('#catHolder').val("");
             $('#categoryFooter').css('display', 'block');
             loadProducts();
+            $('#side_cat').click();
         }
     });
 
@@ -546,7 +548,7 @@ function orderDone()
     var addOns1Tot = addOns1Total;
 
     var prodName2 = $('#pair').val();
-    var addOnsName2 = flavor2AddOns;
+    var addOnsName2 = flavor2AddOns; 
     var addOns2Tot = addOns2Total;
 
     var size = $('#size').val();
@@ -952,5 +954,70 @@ function backToOrdering(action)
         {
             $('#navModal').modal('toggle');
         }
+    }
+}
+
+// for side bar toggle
+let stats = 0;
+$('#side_cat').on('click', function()
+{
+    if(stats == 0)
+    {
+        $('#category').css('display','inline-block');
+        stats = 1;
+        $('.gt').css('display', 'none');
+        $('.lt').css('display', 'flex');
+    }
+    else
+    {
+        $('#category').css('display','none');
+        stats = 0;
+        $('.lt').css('display', 'none');
+        $('.gt').css('display', 'flex');
+    }
+})
+
+$('.close_cat_icon').on('click',function()
+{
+    $('#side_cat').click();
+})
+
+// order summary
+let stats2 = 0;
+$('#side_order').on('click', function()
+{
+    if(stats2 == 0)
+    {
+        $('#order_summary').css('display','inline-block');
+        stats2 = 1;
+        $('.osGt').css('display', 'flex');
+        $('.osLt').css('display', 'none');
+    }
+    else
+    {
+        $('#order_summary').css('display','none');
+        stats2 = 0;
+        $('.osLt').css('display', 'flex');
+        $('.osGt').css('display', 'none');
+    }
+})
+
+window.addEventListener('resize', resizeFunction);
+
+function resizeFunction()
+{
+    if($(window).width() >= 991)
+    {
+        stats = 1;
+        stats2 = 1;
+        $('#category').css('display','inline-block');
+        $('#order_summary').css('display','inline-block');
+    }
+    else
+    {
+        $('#category').css('display','none');
+        $('#order_summary').css('display','none');
+        stats = 0;
+        stats2 = 0;
     }
 }
