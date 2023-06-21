@@ -9,7 +9,7 @@
         while($data = mysqli_fetch_assoc($res))
         {
             $output .= '
-                    <tr>
+                    <tr class="t_row" data-id="'.$data['ID'].'">
                         <td class="prod_td">'.$num.'</td>
                         <td class="prod_td">'.$data['name'].'</td>
                         <td class="prod_td">'.$data['unit_size'].'</td>

@@ -1,6 +1,7 @@
 <?php 
     require_once 'includes/connection.php';
     $response = '';
+    $ID = $_POST['ID'];
     $name = strtoupper($_POST['name']);
     $unit_size = strtoupper($_POST['unit_size']);
     $price = strtoupper($_POST['price']);
@@ -8,10 +9,10 @@
 
     try
     {
-        $res = mysqli_query($con, "INSERT INTO sssp_products VALUES(null,'$name','$unit_size','$price','$cat')" );
+        $res = mysqli_query($con, "UPDATE sssp_products SET name='$name', unit_size='$unit_size', price='$price', category='$cat' WHERE ID='$ID'" );
         if($res)
         {
-            $response = 'Successfully Added';
+            $response = 'Successfully Updated';
         }
 
     }

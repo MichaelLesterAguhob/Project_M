@@ -14,6 +14,9 @@
         height: 90vh;
         margin: auto;
         overflow: auto;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
     }
     #prod_table{
         color: aliceblue;
@@ -21,6 +24,9 @@
     }
     td, th{
         color: aliceblue;
+    }
+    .prod_th{
+        letter-spacing: 1px;
     }
     .crud_input{
         background-color: transparent;
@@ -31,5 +37,51 @@
         align-items: center;
         text-align: right;
         word-spacing: 20px;
+    }
+    .t_row{
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    /* edit and update button */
+    .edit_delete{
+        display: none;
+        position: fixed;
+        top: 80%;
+        right: 0;
+        margin-right: 15px;
+    }
+    .btn_edit_del{
+        width: 100%;
+        letter-spacing: 2px;
+    }
+
+    /* MODAL */
+    .modal-dialog{
+        margin-top: 15%;   
+    }
+    .modal-content{
+        background-color:#191970;
+        
+    }
+    .modal_btn{
+        display: flex;
+        justify-items: center;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .modal_btn .btn{
+        min-width: 80px;
+    }
+    @media (max-width:300px){
+        .modal_btn{
+            display: block;
+            width: 100%;
+        }
+        .modal_btn .btn{
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
     }
     
