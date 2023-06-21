@@ -18,6 +18,12 @@
         border-bottom: none;
         border-left: none;
     }
+    @media(max-width:991px)
+    {
+        #crud{
+            height: 70vh;
+        }
+    }
     #prod_table{
         color: aliceblue;
         margin: auto;
