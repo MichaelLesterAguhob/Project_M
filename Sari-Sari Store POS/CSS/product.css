@@ -1,0 +1,35 @@
+
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+        color: aliceblue;
+        background-color: #191970;
+    }
+    .row_col{
+        border: 1px solid blue; 
+        height: 90vh;
+        margin: auto;
+        overflow: auto;
+    }
+    #prod_table{
+        color: aliceblue;
+        margin: auto;
+    }
+    td, th{
+        color: aliceblue;
+    }
+    .crud_input{
+        background-color: transparent;
+        border: 1px solid blue;
+        color: aliceblue;
+    }
+    .crud_td_btn{
+        align-items: center;
+        text-align: right;
+        word-spacing: 20px;
+    }
+    
