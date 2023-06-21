@@ -143,7 +143,6 @@ $(document).on('click','#save_changes', function()
                 data:{ID:ID, name:e_name, unit_size:e_unit_size, price:e_price, cat:e_cat},
                 success:function(data)
                 {
-                    $('#msg2').text(data).fadeIn(1000).fadeOut(2000);
                     $('#edit_name').val('');
                     $('#edit_unit_size').val('');
                     $('#edit_price').val('');
@@ -151,9 +150,31 @@ $(document).on('click','#save_changes', function()
                     $('#edit_del_modal').modal('toggle');
                     load_prod();
                     $('.edit_delete').css('display','none');
+                    $('#msg2').text(data).fadeIn(1000).fadeOut(2000);
                 }
             })
     }
 })
 
 // DELETING DATA
+$(document).on('click','#delete_prod', function()
+{
+    let ID = data_id;
+    $.ajax(
+        {
+            url:'backend/delete_prod.php',
+            method:'post',
+            data:{ID:ID},
+            success:function(data)
+            {
+                $('#edit_name').val('');
+                $('#edit_unit_size').val('');
+                $('#edit_price').val('');
+                $('#edit_cat').val('');
+                $('#edit_del_modal').modal('toggle');
+                load_prod();
+                $('.edit_delete').css('display','none');
+                $('#msg2').text(data).fadeIn(1000).fadeOut(2000);
+            }
+        })
+})
