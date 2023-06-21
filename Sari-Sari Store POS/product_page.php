@@ -23,11 +23,11 @@
                 <table class="table table-borderless table-hover">
                     <tr>
                         <td>Name</td>
-                        <td><input type="text" class="form-control crud_input" id="prod_name"></input></td>
+                        <td><input type="text" class="form-control crud_input" id="prod_name" placeholder="ex. nescafe"></input></td>
                     </tr>
                     <tr>
                         <td>Unit / Size</td>
-                        <td><input type="text" class="form-control crud_input" id="prod_unit_size" placeholder="ex. 150g / Big"></input></td>
+                        <td><input type="text" class="form-control crud_input" id="prod_unit_size" placeholder="ex. 150g / Big / None"></input></td>
                     </tr>
                     <tr>
                         <td>Price</td>

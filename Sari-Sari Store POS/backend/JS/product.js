@@ -1,4 +1,29 @@
 
+$(document).on('click','#prod_unit_size', function()
+{
+    $('#prod_unit_size').val('');
+});
+$(document).on('focusout','#prod_unit_size', function()
+{
+    if($('#prod_unit_size').val() == "")
+    {
+        $('#prod_unit_size').val('None');
+    }
+});
+$(document).on('click','#prod_cat', function()
+{
+    $('#prod_cat').val('');
+});
+
+$(document).on('focusout','#prod_cat', function()
+{
+    if($('#prod_cat').val() == "")
+    {
+        $('#prod_cat').val('Unset');
+    }
+});
+
+// ADDING NEW PRODUCTS
 $(document).on('click','#add_prod', function()
 {
     let name = $('#prod_name').val();
@@ -29,6 +54,7 @@ $(document).on('click','#add_prod', function()
     }
 })
 
+// LOADING PRODUCTS FROM DATABASE
 load_prod();
 function load_prod()
 {
