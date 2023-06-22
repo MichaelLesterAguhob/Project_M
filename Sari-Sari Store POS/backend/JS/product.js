@@ -1,50 +1,64 @@
 
 // unit price input field event
-$(document).on('click','.prod_unit_size', function()
+$(document).on('click','#prod_unit_size', function()
 {
-    if($('#prod_unit_size').val() =="NONE" && $('#edit_unit_size').val() != "NONE")
+    if($('#prod_unit_size').val() =="None")
     {
         $('#prod_unit_size').val('');
     }
-    else if($('#prod_unit_size').val() !="None" && $('#edit_unit_size').val() == "NONE")
-    {
-        $('#edit_unit_size').val('');
-    }
-
 });
-$(document).on('focusout','.prod_unit_size', function()
+$(document).on('focusout','#prod_unit_size', function()
 {
-    if($('#prod_unit_size').val() == "" && $('#edit_unit_size').val() != "")
+    if($('#prod_unit_size').val() == "")
     {
         $('#prod_unit_size').val('None');
     }
-    else if($('#prod_unit_size').val() !="" && $('#edit_unit_size').val() == "")
+});
+
+// unit price input field event [modal]
+$(document).on('click','#edit_unit_size', function()
+{
+    if($('#edit_unit_size').val() == "NONE")
     {
         $('#edit_unit_size').val('');
+    }
+});
+$(document).on('focusout','#edit_unit_size', function()
+{
+   if($('#edit_unit_size').val() == "")
+    {
+        $('#edit_unit_size').val('NONE');
     }
 });
 
 // product category inout field event
-$(document).on('click','.prod_cat', function()
+$(document).on('click','#prod_cat', function()
 {
-    if($('#prod_cat').val() =="Unset" && $('#edit_cat').val() != "Unset")
+    if($('#prod_cat').val() =="Unset")
     {
         $('#prod_cat').val('');
     }
-    else if($('#prod_cat').val() !="Unset" && $('#edit_cat').val() == "Unset")
+});
+$(document).on('focusout','#prod_cat', function()
+{
+    if($('#prod_cat').val() == "")
+    {
+        $('#prod_cat').val('Unset');
+    }
+});
+// modal
+$(document).on('click','#edit_cat', function()
+{
+    if($('#edit_cat').val() == "UNSET")
     {
         $('#edit_cat').val('');
     }
 });
-$(document).on('focusout','.prod_cat', function()
+$(document).on('focusout','#edit_cat', function()
 {
-    if($('#prod_cat').val() == "" && $('#edit_cat').val() != "")
+    if($('#edit_cat').val() == "")
     {
-        $('#prod_cat').val('Unset');
-    }
-    else if($('#prod_cat').val() !="" && $('#edit_cat').val() == "")
-    {
-        $('#edit_cat').val('');
+        $('#edit_cat').val('UNSET');
     }
 });
 
@@ -69,15 +83,20 @@ $(document).on('click','#add_prod', function()
                 success:function(data)
                 {
                     $('#msg').text(data).fadeIn(1000).fadeOut(2000);
-                    $('#prod_name').val('');
-                    $('#prod_unit_size').val('');
-                    $('#prod_price').val('');
-                    $('#prod_cat').val('');
+                    clearAddingFields();
                     load_prod();
                 }
             })
     }
 })
+
+function clearAddingFields()
+{
+    $('#prod_name').val('');
+    $('#prod_unit_size').val('');
+    $('#prod_price').val('');
+    $('#prod_cat').val('');
+}
 
 // LOADING PRODUCTS FROM DATABASE
 load_prod();
@@ -92,6 +111,27 @@ function load_prod()
                 $('#load_prod').html(data);
             }
         })
+}
+// LOADING PRODUCTS CATEGORY FROM DATABASE
+load_cat();
+function load_cat()
+{
+    $.ajax(
+        {
+            url:'backend/load_cat.php',
+            method:'post',
+            success:function(data)
+            {
+                $('#select_cat').html(data);
+            }
+        })
+}
+
+//clicking on cat select
+function catSelected()
+{   
+    let catSelected = $('#select_cat').val();
+    $('#prod_cat').val(catSelected);
 }
 
 //Event on Clicking on data
@@ -150,7 +190,7 @@ $(document).on('click','#save_changes', function()
                     $('#edit_del_modal').modal('toggle');
                     load_prod();
                     $('.edit_delete').css('display','none');
-                    $('#msg2').text(data).fadeIn(1000).fadeOut(2000);
+                    $('#msg2').text(data).fadeIn(1000).fadeOut(4000);
                 }
             })
     }
@@ -174,7 +214,7 @@ $(document).on('click','#delete_prod', function()
                 $('#edit_del_modal').modal('toggle');
                 load_prod();
                 $('.edit_delete').css('display','none');
-                $('#msg2').text(data).fadeIn(1000).fadeOut(2000);
+                $('#msg2').text(data).fadeIn(1000).fadeOut(4000);
             }
         })
 })

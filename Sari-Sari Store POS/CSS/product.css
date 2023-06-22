@@ -90,4 +90,16 @@
             margin-bottom: 10px;
         }
     }
+    #select_cat{
+        width: 100%;
+        height:30px;
+        border-radius: 5px;
+        background-color: transparent;
+        border-color: blue;
+        color: aliceblue;
+    }
+    .select_opt{
+        background-color: transparent;
+        color: black;
+    }
     

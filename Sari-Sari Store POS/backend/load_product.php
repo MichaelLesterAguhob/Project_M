@@ -4,8 +4,8 @@
     $response = '';
     $num = 1;
     try
-    {
-        $res = mysqli_query($con, "SELECT * FROM sssp_products ORDER BY ID DESC");
+    { 
+        $res = mysqli_query($con, "SELECT * FROM sssp_products ORDER BY name");
         while($data = mysqli_fetch_assoc($res))
         {
             $output .= '
