@@ -8,7 +8,7 @@
     $cat = '';
     try
     {
-        $res = mysqli_query($con, "SELECT * FROM sssp_products WHERE ID='$ID' ");
+        $res = mysqli_query($con, "SELECT * FROM sssp_products WHERE ID='$ID'");
         while($row = mysqli_fetch_assoc($res))
         {
             $name = $row['name'];

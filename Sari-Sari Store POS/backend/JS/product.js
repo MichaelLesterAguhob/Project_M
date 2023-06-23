@@ -287,3 +287,52 @@ $(document).on('keyup','#prod_cat', function(e)
         }
     }
 })
+
+// SEARCHING PRODUCTS
+$(document).on('click','#btn_search', function()
+{
+    let search_input = $('#inp_search').val();
+    if(search_input == "")
+    {
+        $('#msg2').html("No Input!").fadeIn(500).fadeOut(2000);
+    }
+    else
+    {
+        // $('#load_prod').html("");
+        $.ajax(
+            {
+                url:'backend/search.php',
+                method:'post',
+                data:{search_input:search_input},
+                success:function(data)
+                {
+                    data = $.parseJSON(data);
+                    if(data.stat == "success")
+                    {
+                        $('#load_prod').html("");
+                        $('#load_prod').html(data.html);
+                    }
+                    else
+                    {
+                        $('#load_prod').html(data.text);
+                    }
+                }
+            })
+    }
+})
+
+//IF SEARC BAR IS NULL
+function search_null()
+{
+    if($('#inp_search').val() == "")
+    {
+        load_prod();
+    }
+}
+$(document).on('keyup','#inp_search', function(e)
+{
+    if(e.key == "Enter" || e.keycode == 13)
+    {
+        $('#btn_search').click();
+    }
+})

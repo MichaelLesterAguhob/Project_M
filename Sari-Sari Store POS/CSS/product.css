@@ -102,4 +102,31 @@
         background-color: transparent;
         color: black;
     }
+
+    #prod_display{
+        overflow: unset;
+    }
+    .search_bar{
+        display: inline-flex;
+        width: 100%;
+    }
+    #inp_search{
+        width: 70%;
+        margin-right: 5%;
+        background-color: transparent;
+        border: 1px solid blue; 
+        color: aliceblue;
+    }
+    #btn_search{
+        width: 25%;
+    }
+    #msg2{
+        position: absolute;
+        width: 50%;
+    }
+    #products{
+        height: 78vh;
+        margin-top: 40px;
+        overflow: auto;
+    }
     

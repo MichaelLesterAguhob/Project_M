@@ -14,7 +14,7 @@
     </head>
     <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
         <h1 class="header_1 text-center">Products</h1>
 
         <div class="row">
@@ -50,26 +50,32 @@
                             <button class="btn btn-md btn-success" id="add_prod">Add Now</button>
                             <button class="btn btn-md btn-warning" id="cancel" onclick="clearAddingFields();">Cancel</button>
                         </td>
-                    </tr>
+                    </tr>   
                 </table>
                 <p id="msg" class="text-center text-success"></p>
             </div>
             <div class="col-lg-8 row_col" id="prod_display">
-                <p id="msg2" class="text-center text-success"></p>
-                <table class="table bordered table-hover" id="prod_table">
-                    <thead>
-                        <tr>
-                            <th class="prod_th pb-2">#</th>
-                            <th class="prod_th pb-2">NAME</th>
-                            <th class="prod_th pb-2">UNITS/SIZE</th>
-                            <th class="prod_th pb-2">PRICE</th>
-                            <th class="prod_th pb-2">CATEGORY</th>
-                        </tr>
-                    </thead>
-                    <tbody id="load_prod">
-                        <!-- load data from database here -->
-                    </tbody>
-                </table>
+                <div class="search_bar">
+                    <input type="text" id="inp_search" class="form-control" placeholder="Search here..." onchange="search_null();">
+                    <button class="btn btn-sm btn-success" id="btn_search">Search</button>
+                </div>
+                <p id="msg2" class="text-center text-success mt-1 mb-0"></p>
+                <div id="products">
+                    <table class="table bordered table-hover" id="prod_table">
+                        <thead>
+                            <tr>
+                                <th class="prod_th pb-2">#</th>
+                                <th class="prod_th pb-2">NAME</th>
+                                <th class="prod_th pb-2">UNITS/SIZE</th>
+                                <th class="prod_th pb-2">PRICE</th>
+                                <th class="prod_th pb-2">CATEGORY</th>
+                            </tr>
+                        </thead>
+                        <tbody id="load_prod">
+                            <!-- load data from database here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
