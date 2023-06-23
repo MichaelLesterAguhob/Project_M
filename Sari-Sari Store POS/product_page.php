@@ -41,15 +41,14 @@
                         <td></td>
                         <td>
                             <select id="select_cat" onchange="catSelected();">
-                                <option id="select_opt">Quick Select Category</option>
-                                <option id="select_opt"></option>
+                            <!-- load category  -->
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2" class="crud_td_btn" style="padding-top: 50px;">
                             <button class="btn btn-md btn-success" id="add_prod">Add Now</button>
-                            <button class="btn btn-md btn-warning" id="cancel" >Cancel</button>
+                            <button class="btn btn-md btn-warning" id="cancel" onclick="clearAddingFields();">Cancel</button>
                         </td>
                     </tr>
                 </table>

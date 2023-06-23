@@ -85,6 +85,7 @@ $(document).on('click','#add_prod', function()
                     $('#msg').text(data).fadeIn(1000).fadeOut(2000);
                     clearAddingFields();
                     load_prod();
+                    load_cat();
                 }
             })
     }
@@ -96,6 +97,7 @@ function clearAddingFields()
     $('#prod_unit_size').val('');
     $('#prod_price').val('');
     $('#prod_cat').val('');
+    load_cat();
 }
 
 // LOADING PRODUCTS FROM DATABASE
@@ -131,7 +133,14 @@ function load_cat()
 function catSelected()
 {   
     let catSelected = $('#select_cat').val();
-    $('#prod_cat').val(catSelected);
+    if(catSelected != "Quick Select Category")
+    {
+        $('#prod_cat').val(catSelected);
+    }
+    else
+    {
+        $('#prod_cat').val('');
+    }
 }
 
 //Event on Clicking on data
@@ -189,6 +198,7 @@ $(document).on('click','#save_changes', function()
                     $('#edit_cat').val('');
                     $('#edit_del_modal').modal('toggle');
                     load_prod();
+                    load_cat();
                     $('.edit_delete').css('display','none');
                     $('#msg2').text(data).fadeIn(1000).fadeOut(4000);
                 }
@@ -213,8 +223,67 @@ $(document).on('click','#delete_prod', function()
                 $('#edit_cat').val('');
                 $('#edit_del_modal').modal('toggle');
                 load_prod();
+                load_cat();
                 $('.edit_delete').css('display','none');
                 $('#msg2').text(data).fadeIn(1000).fadeOut(4000);
             }
         })
+})
+
+// enter key event on adding products
+$(document).on('keyup','#prod_name', function(e)
+{
+    if(e.key === "Enter" || e.keycode === 13)
+    {
+        if($('#prod_name').val() == "")
+        {
+            $('#msg').text('No input. Fill in the product name').fadeIn(1000).fadeOut(4000);
+        }
+        else
+        {
+            $('#prod_unit_size').focus();
+        }
+    }
+})
+$(document).on('keyup','#prod_unit_size', function(e)
+{
+    if(e.key === "Enter" || e.keycode === 13)
+    {
+        if($('#prod_unit_size').val() == "")
+        {
+            $('#msg').text('No input. Fill in the product name').fadeIn(1000).fadeOut(4000);
+        }
+        else
+        {
+        $('#prod_price').focus();
+        }
+    }
+})
+$(document).on('keyup','#prod_price', function(e)
+{
+    if(e.key === "Enter" || e.keycode === 13)
+    {
+        if($('#prod_price').val() == "")
+        {
+            $('#msg').text('No input. Fill in the product name').fadeIn(1000).fadeOut(4000);
+        }
+        else
+        {
+        $('#prod_cat').focus();
+        }
+    }
+})
+$(document).on('keyup','#prod_cat', function(e)
+{
+    if(e.key === "Enter" || e.keycode === 13)
+    {
+        if($('#prod_cat').val() == "")
+        {
+            $('#msg').text('No input. Fill in the product name').fadeIn(1000).fadeOut(4000);
+        }
+        else
+        {
+        $('#add_prod').click();
+        }
+    }
 })
