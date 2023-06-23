@@ -54,10 +54,10 @@ try
                                     <th class="receiptTh" text-align:center;" colspan="6"><h5><b>SWEETEA BOBA<b></h5></th>
                                 </tr>
                                 <tr>
-                                    <td class="receiptTh" text-align:center;" colspan="6" style="line-height:10px;"><small>Located at Basta sa Atop-Atop</small></td>
+                                    <td class="receiptTh" text-align:center;" colspan="6" style="line-height:10px;"><small>Adress</small></td>
                                 </tr>
                                 <tr>
-                                    <td class="receiptTh" text-align:center;" colspan="6" style="line-height:10px;"><small>Pag di matunton si Marose pangutan.on</small></td>
+                                    <td class="receiptTh" text-align:center;" colspan="6" style="line-height:10px;"><small>more address details</small></td>
                                 </tr>
                                 <tr>
                                     <td class="receiptTh" text-align:center;" colspan="6" style="line-height:10px;">sweateaBoba@gmail.com</td>
