@@ -27,7 +27,7 @@
     <div class="nav">
         <a href="main_page.php">Home</a>
         <a href="product_page.php">Product</a>
-        <a href="#">Exit</a>
+        <a href="#">&#10006; Exit</a>
     </div>
     
 </body>

@@ -1,0 +1,87 @@
+
+.row_col{
+    
+    height: 90vh;
+    margin: auto;
+    overflow: auto;
+    border: none;
+}
+@media (max-width:991px){
+    .row_col{
+        margin-bottom: 20px;
+        height: 65vh;
+    }
+    .search_bar{
+        height: 40px;
+    }
+    #btn_search{
+        font-size: 12px;
+    }
+}
+.search_bar{
+    display: inline-flex;
+    width: 100%;
+}
+#inp_search{
+    width: 70%;
+    margin-right: 5%;
+    background-color: transparent;
+    border: 1px solid blue; 
+    color: aliceblue;
+}
+#btn_search{
+    width: 25%;
+}
+#products{
+    height: 78vh;
+    overflow: auto;
+}
+.modal_table td, th, h3{
+    color: aliceblue;
+}
+
+/* MODAL */
+.modal-dialog{
+    margin-top: 25%;   
+}
+.modal-content{
+    background-color: royalblue;
+    
+}
+.modal_btn{
+    display: flex;
+    justify-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.modal_btn .btn{
+    min-width: 80px;
+}
+@media (max-width:300px){
+    .modal_btn{
+        display: block;
+        width: 100%;
+    }
+    .modal_btn .btn{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+.crud_input{
+    background-color: transparent;
+    border: 1px solid blue;
+    color: aliceblue;
+    height: 30px;
+}
+.order_qnty{
+    height: 50px;
+    text-align: center;
+}
+.qnty{
+    display: inline-flex;
+}
+.btn_qnty{
+    margin-left: 5px;
+    width: 50px;
+}

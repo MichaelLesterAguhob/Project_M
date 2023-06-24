@@ -60,7 +60,7 @@
             <div class="col-lg-8 row_col" id="prod_display">
                 <div class="search_bar">
                     <input type="text" id="inp_search" class="form-control" placeholder="Search here..." onchange="search_null();">
-                    <button class="btn btn-sm btn-success" id="btn_search">Search</button>
+                    <button class="btn btn-sm btn-success" id="btn_search">&#128269; Search</button>
                 </div>
                 <p id="msg2" class="text-center text-success mt-1 mb-0"></p>
                 <div id="products">
