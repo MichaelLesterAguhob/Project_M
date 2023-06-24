@@ -86,6 +86,7 @@ $(document).on('click','#add_prod', function()
                     clearAddingFields();
                     load_prod();
                     load_cat();
+                    $('#inp_search').val("");
                 }
             })
     }

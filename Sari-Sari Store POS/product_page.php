@@ -6,20 +6,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Products</title>
-        <!-- Bootsrap -->
+
+        <!-- Bootsrap -->   
         <link rel="stylesheet" href="CSS/bootstrap/css/bootstrap.css">
         <script src="CSS/bootstrap/js/bootstrap.js"></script>
+
         <!-- CSS -->
         <link rel="stylesheet" href="CSS/product.css">
     </head>
     <body>
-
+    <?php include_once 'page_header.php'; ?>
+    
     <div class="container-fluid mb-5">
         <h1 class="header_1 text-center">Products</h1>
 
         <div class="row">
             <div class="col-lg-4 row_col" id="crud">
-                <h3 class="text-center">Add Products</h3>
+                <h4 class="text-center">Add Products</h4>
                 <table class="table table-borderless table-hover">
                     <tr>
                         <td>Name</td>
@@ -123,5 +126,6 @@
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="backend/JS/product.js"></script>
+
     </body>
     </html>

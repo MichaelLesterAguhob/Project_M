@@ -6,7 +6,7 @@
     $num = 1;
     try
     { 
-        $res = mysqli_query($con, "SELECT * FROM sssp_products WHERE name LIKE '$search_input%' ");
+        $res = mysqli_query($con, "SELECT * FROM sssp_products WHERE name LIKE '%$search_input%' ");
         while($data = mysqli_fetch_assoc($res))
         {
             $output .= '
@@ -20,11 +20,20 @@
                     ';
             $num ++;
         }
-        $response = json_encode(['stat'=>'success', 'html'=>$output]);
+        $res2 = mysqli_query($con, "SELECT * FROM sssp_products WHERE name LIKE '%$search_input%' ");
+        $data2 = mysqli_fetch_array($res2);
+        if($data2 != null)
+        {
+            $response = json_encode(['stat'=>'success', 'html'=>$output]);
+        }
+        else
+        {
+            $response = json_encode(['stat'=>'success', 'html'=>'No Product Found!']);
+        }
     }
     catch(Exception $ex)
     {
-        $response = 'Error Occured' . $ex;
+        $response = json_encode(['stat'=>'failed', 'msg'=>'Error Occured '. $ex]);
     }
 
     echo $response;
