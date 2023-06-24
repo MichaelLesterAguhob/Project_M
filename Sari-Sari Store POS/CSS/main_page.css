@@ -27,7 +27,7 @@
     margin-right: 5%;
     background-color: transparent;
     border: 1px solid blue; 
-    color: aliceblue;
+    color: black;
 }
 #btn_search{
     width: 25%;
@@ -42,7 +42,7 @@
 
 /* MODAL */
 .modal-dialog{
-    margin-top: 25%;   
+    margin-top: 15%;   
 }
 .modal-content{
     background-color: royalblue;
@@ -71,7 +71,7 @@
 .crud_input{
     background-color: transparent;
     border: 1px solid blue;
-    color: aliceblue;
+    color: black;
     height: 30px;
 }
 .order_qnty{
@@ -84,4 +84,7 @@
 .btn_qnty{
     margin-left: 5px;
     width: 50px;
+}
+.num{
+    display: none;
 }

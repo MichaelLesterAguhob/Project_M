@@ -11,7 +11,7 @@
         {
             $output .= '
                     <tr class="t_row" data-id="'.$data['ID'].'">
-                        <td class="prod_td">'.$num.'</td>
+                        <td class="prod_td num">'.$num.'</td>
                         <td class="prod_td">'.$data['name'].'</td>
                         <td class="prod_td">'.$data['unit_size'].'</td>
                         <td class="prod_td">'.$data['price'].'</td>

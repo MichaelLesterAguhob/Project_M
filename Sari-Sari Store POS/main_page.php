@@ -23,6 +23,7 @@
                     <input type="text" id="inp_search" class="form-control" placeholder="Search here..." onchange="search_null();">
                     <button class="btn btn-sm btn-success" id="btn_search">&#128269; Search</button>
                 </div>
+                <p id="msg2" class="text-success" style="display: none;"></p>
                 <div id="products">
                     <table class="table table-hover table-striped">
                         <thead class="text-light bg-dark">
@@ -41,7 +42,7 @@
             </div>
             <div class="col-lg-4 row_col">
                 <div class="ordering mb-2">
-                    <button class="btn btn-sm btn-success" id="btn_add" data-bs-toggle="modal" data-bs-target="#ordering_modal">&plus; Add to Order</button>
+                    <button class="btn btn-sm btn-success" id="btn_add">&plus; Add to Order</button>
                 </div>
                 <div class="order_summary">
                     <table class="table">
@@ -67,7 +68,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                <h3 class="text-center">Edit or Delete Product</h3>
+                <h3 class="text-center">Add Order(s)</h3>
+                <input type="text" id="prod_id">
                 <table class="table table-borderless table-hover modal_table">
                     <tr>
                         <td>Description</td>
@@ -84,7 +86,7 @@
                     <tr>
                         <td>Quantity</td>
                         <td class="qnty">
-                            <input type="number" class="form-control crud_input order_qnty" id="order_qnty">
+                            <input type="number" class="form-control crud_input order_qnty" id="order_qnty" value="1">
                             <button id="add_qnty" class="btn btn-sm btn-success btn_qnty">+</button>
                             <button id="minus_qnty" class="btn btn-sm btn-danger btn_qnty">-</button>
                         </td>
