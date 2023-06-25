@@ -1,21 +1,58 @@
 
 .row_col{
-    
     height: 90vh;
     margin: auto;
+}
+#products{
+    height: 75vh;
     overflow: auto;
-    border: none;
+}
+.order_summary{
+    max-height: 65vh;
+    overflow: auto;
+}
+.ordering{
+    display: inline-flex;
+    justify-content: space-evenly;
+    overflow-y: auto;
+    max-width: 100%;
+}
+.ordering_btn{
+    margin-right: 5px;
+}
+#temp_order_btn{
+    display: none;
+    /* display: inline-flex; */
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: royalblue;
+    border-radius: 5px;
+    border: 1px solid black;
+    right: 0;
 }
 @media (max-width:991px){
     .row_col{
-        margin-bottom: 20px;
-        height: 65vh;
+        margin-bottom: 10px;
+        height: 80vh;
     }
     .search_bar{
         height: 40px;
     }
     #btn_search{
         font-size: 12px;
+    }
+    #products{
+        height: 90%;
+    }
+    .order_summary{
+        max-height: 90%;
+    }
+    .col-lg-4{
+        margin-bottom: 20%;
     }
 }
 .search_bar{
@@ -32,10 +69,7 @@
 #btn_search{
     width: 25%;
 }
-#products{
-    height: 78vh;
-    overflow: auto;
-}
+
 .modal_table td, th, h3{
     color: aliceblue;
 }
@@ -67,6 +101,28 @@
         width: 100%;
         margin-bottom: 10px;
     }
+    .row_col{
+        height: 80vh;
+    }
+    .search_bar{
+        height: 40px;
+    }
+    #btn_search{
+        font-size: 12px;
+    }
+    #products{  
+        height: 90%;
+        width: 100%;
+    }
+    .col-lg-4{
+        margin-bottom: 20%;
+    }
+    .order_summary{
+        width: 100%;
+        max-height: 75%;
+    }
+   
+
 }
 .crud_input{
     background-color: transparent;
@@ -77,6 +133,15 @@
 .order_qnty{
     height: 50px;
     text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+}
+.order_price{
+    font-weight: bolder;
+}
+.order_sub_total{
+    font-size: 20px;
+    font-weight: bolder;
 }
 .qnty{
     display: inline-flex;
@@ -87,4 +152,24 @@
 }
 .num{
     display: none;
+}
+
+.btn_temp_order{
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.t_row, .temp_order_row:hover{
+    cursor: pointer;
+}
+.total_order{
+    display: inline-flex;
+    border: none;
+    font-size: 30px;
+}
+#total_order{
+    background-color: lightgreen;
+    font-size: 25px;
+    text-align: center;
 }

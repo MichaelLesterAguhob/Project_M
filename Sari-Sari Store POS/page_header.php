@@ -9,7 +9,7 @@
             background-color: royalblue;
             color: black;
             padding: 10px;
-            overflow-x: scroll;
+            overflow: auto;
             margin-bottom: 10px;
         }
         .nav a{
