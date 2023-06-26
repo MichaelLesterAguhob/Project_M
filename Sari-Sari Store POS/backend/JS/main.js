@@ -44,7 +44,11 @@ $(document).on('click', '.t_row', function()
 $(document).on('dblclick', '.t_row', function()
 {
     data_id = $(this).attr('data-id');
-    $('#btn_add').click();
+    setTimeout(function()
+    {
+        $('#btn_add').click();
+    },300)
+    
 })
 
 //add to orders
@@ -242,7 +246,81 @@ $(document).on('click', '.temp_order_row', function()
     $(this).css('background-color','lightgreen');
     temp_order_data_id = $(this).attr('id');
     $('#temp_order_btn').css('display','inline-flex');
+    get_temp_order_qnty();
 })
+
+let temp_order_qnty = '';
+let temp_order_price = '';
+function get_temp_order_qnty()
+{
+    $.ajax(
+        {
+            url:'backend/get_temp_order_qnty.php',
+            method:'post',
+            data:{ID:temp_order_data_id},
+            success: function(data)
+            {
+                data = $.parseJSON(data);
+                if(data.stat == "success")
+                {
+                    temp_order_qnty = data.qnty;
+                    temp_order_price = data.price;
+                }
+                else
+                {
+                    alert(data.text);
+                }
+            }
+        })
+}
+
+//TEMP ORDER PLUS MINUS BUTTON FUNCTION
+function edit_temp_order_qnty(action)
+{ 
+    let new_qnty = temp_order_qnty;
+    let new_sub_total = 0;
+    
+    if(action == "add")
+    {
+        temp_order_qnty++;
+        new_qnty = temp_order_qnty;
+        new_sub_total = new_qnty * temp_order_price;
+
+        $.ajax(
+            {
+                url:'backend/edit_temp_order_qnty.php',
+                method:'post',
+                data:{ID:temp_order_data_id, new_qnty:new_qnty, new_sub_total:new_sub_total},
+                success: function()
+                {
+                    load_temp_orders();
+                    load_order_total();
+                    get_temp_order_qnty();
+                    
+                }
+            })
+    }
+    else if(action == "sub" && new_qnty > 1)
+    {
+            new_qnty = temp_order_qnty - 1;
+            new_sub_total = new_qnty * temp_order_price;
+
+            $.ajax(
+                {
+                    url:'backend/edit_temp_order_qnty.php',
+                    method:'post',
+                    data:{ID:temp_order_data_id, new_qnty:new_qnty, new_sub_total:new_sub_total},
+                    success: function()
+                    {
+                        load_temp_orders();
+                        load_order_total();
+                        get_temp_order_qnty();
+                    }
+                })
+    }  
+}
+
+// CLOSING TEMP ORDER BUTTON
 $(document).on('click', '.close_temp_order_btn', function()
 {
     $('#temp_order_btn').css('display','none');
@@ -250,8 +328,8 @@ $(document).on('click', '.close_temp_order_btn', function()
     $('.temp_order_row').css('background-color','transparent');
 })
 
-
-function delete_temp_order(action)
+//FUNTION TO DELETE TEMPORARY ORDERS
+function delete_temp_order(action) 
 {
     let to_delete = '';
     let item_to_delete = temp_order_data_id;
@@ -284,11 +362,13 @@ function delete_temp_order(action)
         })
 }
 
+// SHOWING DELETE MODAL IF USER WANT TO CANCEL CURRENT ORDERS
 $(document).on('click','#btn_cancel_order',function()
 {
     $('#confirm_modal').modal('toggle');
 })
 
+// JUST LOADING THE TOTAL(SUM) OF SUBTOTAL IN TEMP ORDER TABLE IN THE DATABASE
 load_order_total();
 function load_order_total()
 {

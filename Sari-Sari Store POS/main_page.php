@@ -66,8 +66,8 @@
                 <div id="temp_order_btn">
                     <button class="btn close_temp_order_btn btn-sm btn-warning m-2">X</button>
                     <label>Qnty:</label>
-                    <button id="edit_add_qnty" class="btn btn-sm btn-success btn_temp_order"> + </button>
-                    <button id="edit_add_qnty" class="btn btn-sm btn-danger btn_temp_order"> - </button>
+                    <button onclick="edit_temp_order_qnty('add');" class="btn btn-sm btn-success btn_temp_order"> + </button>
+                    <button onclick="edit_temp_order_qnty('sub');" class="btn btn-sm btn-danger btn_temp_order"> - </button>
                     <button id="delete_temp_order" class="btn btn-sm btn-danger btn_temp_order" onclick="delete_temp_order('single-item');"> Delete </button>
                 </div>
                 <div class="total_order">
