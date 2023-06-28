@@ -43,7 +43,7 @@
             <div class="col-lg-4 row_col">
                 <div class="ordering mb-2">
                     <button class="btn btn-sm btn-success ordering_btn" id="btn_add">&plus; Add to Order</button>
-                    <button class="btn btn-sm btn-success ordering_btn" id="btn_place_order">&plus;Place Order</button>
+                    <button class="btn btn-sm btn-success ordering_btn" id="btn_place_order" data-bs-toggle="modal" data-bs-target="#place_order_modal">&plus;Place Order</button>
                     <button class="btn btn-sm btn-danger ordering_btn" id="btn_cancel_order" >&cross; Cancel Order</button>  
                 </div>
                 <p id="msg" class="text-success" style="display: none;"></p>
@@ -65,13 +65,13 @@
                 </div> 
                 <div id="temp_order_btn">
                     <button class="btn close_temp_order_btn btn-sm btn-warning m-2">X</button>
-                    <label>Qnty:</label>
-                    <button onclick="edit_temp_order_qnty('add');" class="btn btn-sm btn-success btn_temp_order"> + </button>
+                    <label for="btn_temp_order">Qnty:</label>
+                    <button onclick="edit_temp_order_qnty('add');" class="btn btn-sm btn-success btn_temp_order" id="btn_temp_order"> + </button>
                     <button onclick="edit_temp_order_qnty('sub');" class="btn btn-sm btn-danger btn_temp_order"> - </button>
                     <button id="delete_temp_order" class="btn btn-sm btn-danger btn_temp_order" onclick="delete_temp_order('single-item');"> Delete </button>
                 </div>
                 <div class="total_order">
-                   &#8369; <input type="text" id="total_order" class="form-control" value="0" readonly>
+                   &#8369; <input type="text" id="total_order" class="form-control" readonly>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                 <div class="modal-body">
                 <h3 class="text-center">Add Order(s)</h3>
                 <input type="hidden" id="prod_id">
-                <input type="text" id="order_id">
+                <input type="hidden" id="order_id">
                 <table class="table table-borderless table-hover modal_table">
                     <tr>
                         <td>Description</td>
@@ -130,6 +130,25 @@
                     <div class="modal_btn">
                         <button class="btn btn-md btn-danger" onclick="delete_temp_order('all-items');" data-bs-toggle="modal" data-bs-target="#confirm_modal">Cancel Now!</button>
                         <button class="btn btn-md btn-success" data-bs-toggle="modal" data-bs-target="#confirm_modal">NO</button>
+                    </div>                     
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <!-- MODAL FOR PLACING AN ORDER -->
+    <div class="modal fade" id="place_order_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h3 class="text-center mb-4">Place Order(s)?</h3>
+                    <span class="text-light">Enter Amount to Paid:</span>
+                    <br>
+                    <input type="number" class="form-control-lg" id="inpt_amount">
+                    
+                    <div class="modal_btn mt-3">
+                        <button class="btn btn-md btn-success btn_place_order" data-bs-toggle="modal" data-bs-target="#place_order_modal" id="place_order">Confirm!</button>
+                        <button class="btn btn-md btn-warning" data-bs-toggle="modal" data-bs-target="#place_order_modal">Cancel</button>
                     </div>                     
                 </div>
              </div>

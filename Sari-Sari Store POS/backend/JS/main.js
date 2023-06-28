@@ -346,20 +346,29 @@ function delete_temp_order(action)
         alert('Unknown Problem Occured');
     }
 
-    $.ajax(
-        {
-            url:'backend/delete_temp_order_single.php',
-            method:'post',
-            data:{ID:temp_order_data_id, to_delete:to_delete},
-            success: function(data)
+    let total_order = $('#total_order').val();
+    if( total_order == 0 || total_order == "")
+    {
+        $('#msg').css('display','block');
+        $('#msg').html("No Orders yet!").fadeIn(500).fadeOut(5000);
+    }
+    else
+    {
+        $.ajax(
             {
-                $('#msg').css('display','block');
-                $('#msg').html(data).fadeIn(500).fadeOut(2000);
-                load_temp_orders();
-                $('.close_temp_order_btn').click();
-                load_order_total();
-            }
-        })
+                url:'backend/delete_temp_order_single.php',
+                method:'post',
+                data:{ID:temp_order_data_id, to_delete:to_delete},
+                success: function(data)
+                {
+                    $('#msg').css('display','block');
+                    $('#msg').html(data).fadeIn(500).fadeOut(2000);
+                    load_temp_orders();
+                    $('.close_temp_order_btn').click();
+                    load_order_total();
+                }
+            })
+    }
 }
 
 // SHOWING DELETE MODAL IF USER WANT TO CANCEL CURRENT ORDERS
@@ -381,4 +390,49 @@ function load_order_total()
                 $('#total_order').val(data);
             }
         })
+}
+
+$(document).on('click','.btn_place_order', function()
+{
+    $('#place_order_modal').modal('toggle');
+})
+$(document).on('click', '#place_order', function()
+{
+    place_orders();
+})
+//CODES FOR PLACING ORDERS
+function place_orders()
+{
+    let order_id = $('#order_id').val();
+    let amount_to_paid = $('#inpt_amount').val();
+    let total_order = parseInt($('#total_order').val());
+
+    if(amount_to_paid == "" || amount_to_paid == 0 || amount_to_paid < total_order)
+    {
+        $('#msg').css('display','block');
+        $('#msg').html("No Input / Amount must be higher or equal to Total Orders!").fadeIn(500).fadeOut(5000);
+    }
+    else if(total_order <= 0)
+    {
+        $('#msg').css('display','block');
+        $('#msg').html("No Orders yet.").fadeIn(500).fadeOut(5000);
+    }
+    else
+    {
+    $.ajax(
+        {
+            url:'backend/place_orders.php',
+            method:'post',
+            data:{payment:amount_to_paid, total:total_order, order_id:order_id},
+            success: function(data)
+            {
+                $('#msg').css('display','block');
+                $('#msg').html(data).fadeIn(500).fadeOut(5000);
+                $('#inpt_amount').val("0");
+                load_temp_orders();
+                load_order_id();
+                load_order_total();
+            }
+        })
+    }
 }

@@ -4,7 +4,7 @@
 include_once 'includes/connection.php';
 
 $response = '';
-$max_order_id = '';
+$max_order_id = 0;
 try
 {
     $res = mysqli_query($con, "SELECT MAX(order_id) FROM sssp_order_total");
@@ -16,7 +16,7 @@ try
     }
     else
     {
-        $max_order_id += 1;
+        $max_order_id = $data[0] + 1;
         $response = $max_order_id;
     }
         
