@@ -25,7 +25,7 @@ try
         $sub_total = 0;
         $res_is_exist = mysqli_query($con, "SELECT * FROM sssp_temp_order WHERE ID='$min_id'");
         $exist = mysqli_fetch_assoc($res_is_exist);
-        if($exist != null) 
+        if($exist != null)  
         {
             $res = mysqli_query($con, "SELECT * FROM sssp_temp_order WHERE ID='$min_id'");
             while($data = mysqli_fetch_assoc($res)) {
@@ -36,6 +36,14 @@ try
                 $qnty = $data['qnty'];
                 $sub_total = $data['sub_total'];
             }
+            //updating sold record of specific product
+            $new_sold_qnty = 0;
+            $res4 = mysqli_query($con, "SELECT sold FROM sssp_products WHERE name = '$description' ");
+            $data2 = mysqli_fetch_array($res4);
+            $new_sold_qnty = $data2[0] + $qnty;
+
+            $res5 = mysqli_query($con, "UPDATE sssp_products SET sold='$new_sold_qnty' WHERE name = '$description'");
+
             //inserting temp_order data to order table
             $res2 = mysqli_query($con, "INSERT INTO sssp_orders VALUES(null,'$order_id','$description','$size','$price','$qnty','$sub_total')");
             if($res2) 

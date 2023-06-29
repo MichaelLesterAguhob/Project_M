@@ -9,7 +9,7 @@ $(document).on('click','#sort_by',function()
     {
         sorted_by = 0;
         sort = 'name';
-        order_by = 'ASC'
+        order_by = 'ASC' 
         load_prod();
     }
     else

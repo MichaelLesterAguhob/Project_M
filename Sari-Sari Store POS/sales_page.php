@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-    <?php include_once 'page_header.php'; ?>
+    <?php include_once 'page_header.php'; ?> 
     <div id="sales">
         <table class="table">
             <thead class="text-light bg-dark">
