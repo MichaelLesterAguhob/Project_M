@@ -1,4 +1,23 @@
 
+let sort = 'sold'+' DESC';
+let sorted_by = 1;
+$(document).on('click','#sort_by',function()
+{
+    if(sorted_by == 1)
+    {
+        sorted_by = 0;
+        sort = 'name';
+        load_prod();
+    }
+    else
+    {
+        sorted_by = 1;
+        sort = 'sold'+' DESC';
+        load_prod();
+    }
+        
+})
+
 load_prod();
 function load_prod()
 {
@@ -6,6 +25,7 @@ function load_prod()
         {
             url:'backend/prod_display.php',
             method:'post',
+            data:{sort_by:sort},
             success:function(data)
             {
                 $('#prod_display').html(data);

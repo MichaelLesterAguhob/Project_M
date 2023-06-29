@@ -111,7 +111,7 @@
                         <td>Category</td>
                         <td><input type="text" class="form-control crud_input prod_cat" id="edit_cat" value="Unset" placeholder="Drinks, Noodles, Can"></input></td>
                     </tr>
-                </table>
+                </table> 
 
                     <div class="modal_btn">
                         <button class="btn btn-md btn-success" id="save_changes">Save</button>

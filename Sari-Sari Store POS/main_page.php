@@ -28,7 +28,7 @@
                     <table class="table table-hover table-striped">
                         <thead class="text-light bg-dark">
                             <tr>
-                                <th>Description</th>
+                                <th id="sort_by">Description</th>
                                 <th>Unit/Size</th>
                                 <th>Price</th>
                                 <th>Category</th>
@@ -144,7 +144,7 @@
                     <h3 class="text-center mb-4">Place Order(s)?</h3>
                     <span class="text-light">Enter Amount to Paid:</span>
                     <br>
-                    <input type="number" class="form-control-lg" id="inpt_amount">
+                    <input type="number" class="form-control-lg" id="inpt_amount"> 
                     
                     <div class="modal_btn mt-3">
                         <button class="btn btn-md btn-success btn_place_order" data-bs-toggle="modal" data-bs-target="#place_order_modal" id="place_order">Confirm!</button>

@@ -173,3 +173,6 @@
     font-size: 25px;
     text-align: center;
 }
+#sort_by:hover{
+cursor: pointer;
+}

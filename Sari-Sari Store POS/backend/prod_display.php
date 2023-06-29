@@ -3,9 +3,10 @@
     $output = '';
     $response = '';
     $num = 1;
+    $sort_by = $_POST['sort_by'];
     try
     { 
-        $res = mysqli_query($con, "SELECT * FROM sssp_products ORDER BY name");
+        $res = mysqli_query($con, "SELECT * FROM sssp_products ORDER BY $sort_by");
         while($data = mysqli_fetch_assoc($res))
         {
             $output .= '
