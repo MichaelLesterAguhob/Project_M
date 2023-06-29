@@ -1,31 +1,34 @@
 
-let sort = 'sold'+' DESC';
+let sort = 'sold';
+let order_by = 'DESC';
 let sorted_by = 1;
+load_prod();
 $(document).on('click','#sort_by',function()
 {
     if(sorted_by == 1)
     {
         sorted_by = 0;
         sort = 'name';
+        order_by = 'ASC'
         load_prod();
     }
     else
     {
         sorted_by = 1;
-        sort = 'sold'+' DESC';
+        sort = 'sold';
+        order_by = 'DESC'
         load_prod();
     }
         
 })
 
-load_prod();
 function load_prod()
 {
     $.ajax(
         {
-            url:'backend/prod_display.php',
+            url:'backend/prod_display.php', 
             method:'post',
-            data:{sort_by:sort},
+            data:{sort_by:sort, order_by:order_by},
             success:function(data)
             {
                 $('#prod_display').html(data);

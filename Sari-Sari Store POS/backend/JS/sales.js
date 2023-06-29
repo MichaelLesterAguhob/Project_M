@@ -10,4 +10,4 @@ function load_sales()
                 $('#sales_display').html(data);
             }
         })  
-}
+} 
