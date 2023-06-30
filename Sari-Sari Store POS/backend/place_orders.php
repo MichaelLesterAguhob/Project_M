@@ -8,7 +8,7 @@ $order_id1 = $_POST['order_id'];
 $total = $_POST['total'];
 $payment = $_POST['payment'];
 $chanege = $payment - $total;
-
+$date = date('Y-m-d');
 try
 {
     $save_order_record = mysqli_query($con, "INSERT INTO sssp_order_total VALUES(null, '$order_id1','$total','$payment','$chanege') ");
@@ -45,7 +45,7 @@ try
             $res5 = mysqli_query($con, "UPDATE sssp_products SET sold='$new_sold_qnty' WHERE name = '$description'");
 
             //inserting temp_order data to order table
-            $res2 = mysqli_query($con, "INSERT INTO sssp_orders VALUES(null,'$order_id','$description','$size','$price','$qnty','$sub_total')");
+            $res2 = mysqli_query($con, "INSERT INTO sssp_orders VALUES(null,'$order_id','$description','$size','$price','$qnty','$sub_total', '$date')");
             if($res2) 
             {
                 $res3 = mysqli_query($con, "DELETE FROM sssp_temp_order WHERE ID='$min_id'");

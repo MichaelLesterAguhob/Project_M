@@ -10,8 +10,9 @@ try
     get_max_order_id();
     if($min_order_id != 0 && $max_order_id != 0) {
         while($min_order_id <= $max_order_id) {
-            $res = mysqli_query($con, "SELECT * FROM sssp_orders WHERE order_id = '$min_order_id'");
-            while($data = mysqli_fetch_assoc($res)) {
+            $res = mysqli_query($con, "SELECT * FROM sssp_orders WHERE order_id = '$max_order_id'");
+            while($data = mysqli_fetch_assoc($res)) 
+            {
                 $output .= '
                 <tr>
                     <td class="remove_border">'.$data['order_id'].'</td>
@@ -20,10 +21,11 @@ try
                     <td>'.$data['price'].'</td>
                     <td>'.$data['qnty'].'</td>
                     <td>'.$data['sub_total'].'</td>
+                    <td>'.$data['date'].'</td>
                 </tr>
                 ';
             }
-            $res2 = mysqli_query($con, "SELECT * FROM sssp_order_total WHERE order_id ='$min_order_id'");
+            $res2 = mysqli_query($con, "SELECT * FROM sssp_order_total WHERE order_id ='$max_order_id'");
             $data2 = mysqli_fetch_assoc($res2);
             $output .= '
                 <tr class="total_footer">
@@ -33,23 +35,26 @@ try
                     <td>'.$data2['payment'].'</td>
                     <td>CHANGE: </td>
                     <td>'.$data2['sukli'].'</td>
+                    <td></td>
                 </tr>
                 <tr class="remove_border">
-                    <td colspan="6" class="remove_border"><hr></td>
+                    <td colspan="7" class="remove_border"><hr></td>
                 </tr>
                 ';
-            $min_order_id++;
+            $max_order_id--;
         }
+        $res3 = mysqli_query($con, " SELECT SUM(sub_total) FROM sssp_orders");
+        $data3 = mysqli_fetch_array($res3);
     }
     else
     {
         $output = "No order records found.";
     }
-    $response = $output;
+    $response = json_encode(['stat'=>'success','html'=>$output, 'total_sales'=>$data3[0]]);
 }
 catch(Exception $ex)
 {
-    $response = "Error Occured : ". $ex;
+    $response = json_encode(['stat'=>'failed','text'=>"Error Occured : ". $ex]);
 }
 echo $response;
 

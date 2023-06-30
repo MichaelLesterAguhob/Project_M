@@ -423,6 +423,7 @@ $(document).on('click', '#place_order', function()
 {
     place_orders();
 })
+
 //CODES FOR PLACING ORDERS
 function place_orders()
 {
