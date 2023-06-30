@@ -4,11 +4,19 @@ $response = '';
 $min_order_id = 0;
 $max_order_id = 0;
 $output = '';
+$total_sales = 0;
 try
 {
     get_min_order_id();
     get_max_order_id();
-    if($min_order_id != 0 && $max_order_id != 0) {
+    if($min_order_id != 0 && $max_order_id != 0) 
+    {
+        $res3 = mysqli_query($con, " SELECT SUM(sub_total) FROM sssp_orders");
+        $data3 = mysqli_fetch_array($res3);
+        if($data3 != null)
+        {
+            $total_sales = $data3[0];
+        }
         while($min_order_id <= $max_order_id) {
             $res = mysqli_query($con, "SELECT * FROM sssp_orders WHERE order_id = '$max_order_id'");
             while($data = mysqli_fetch_assoc($res)) 
@@ -43,14 +51,12 @@ try
                 ';
             $max_order_id--;
         }
-        $res3 = mysqli_query($con, " SELECT SUM(sub_total) FROM sssp_orders");
-        $data3 = mysqli_fetch_array($res3);
     }
     else
     {
         $output = "No order records found.";
     }
-    $response = json_encode(['stat'=>'success','html'=>$output, 'total_sales'=>$data3[0]]);
+    $response = json_encode(['stat'=>'success','html'=>$output, 'total_sales'=>$total_sales]);
 }
 catch(Exception $ex)
 {
