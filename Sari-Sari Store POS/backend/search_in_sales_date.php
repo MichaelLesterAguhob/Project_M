@@ -22,7 +22,7 @@ if($date_type == "date")
     $query_max = "SELECT MAX(order_id) FROM sssp_orders WHERE date = '$date1' ";
     $query_total = "SELECT SUM(sub_total) FROM sssp_orders WHERE date = '$date1' ";
 }
-else if($date_type == "date_range")
+else if($date_type == "date_range") 
 {
     $query = "SELECT * FROM sssp_orders WHERE date >= '$date1' AND date <= '$date2'";
     $query_min = "SELECT MIN(order_id) FROM sssp_orders WHERE date >= '$date1' AND date <= '$date2' ";
@@ -33,7 +33,7 @@ else if($date_type == "date_range")
 try 
 {
     // know if search input value match in the database record
-    $res_is_exist = mysqli_query($con, "SELECT * FROM sssp_orders WHERE date >= '$date1' ");
+    $res_is_exist = mysqli_query($con, "SELECT * FROM sssp_orders WHERE date = '$date1' OR date <= '$date2'");
     $data_is_exist = mysqli_fetch_assoc($res_is_exist);
     if($data_is_exist != null) 
     {

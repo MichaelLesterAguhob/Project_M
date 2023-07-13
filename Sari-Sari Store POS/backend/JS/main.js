@@ -38,8 +38,22 @@ function load_prod()
 
 //Event on Clicking on data
 let data_id = 0;
+$(document).on('dblclick', '.t_row', function()
+{
+    clear_old_order_data();
+    data_id = $(this).attr('data-id');
+    setTimeout(function()
+    {
+        $('#btn_add').click();
+    },300)
+    
+})
+
+//function on clicking or selecting an item
+// get data from database, based on the prod id stored in data-id attribute
 $(document).on('click', '.t_row', function()
 {
+    clear_old_order_data();
     $('.t_row').css('background-color','transparent');
     $(this).css('background-color','lightgreen');
     data_id = $(this).attr('data-id');
@@ -58,20 +72,9 @@ $(document).on('click', '.t_row', function()
                         $('#order_name').val(data.name);
                         $('#order_unit_size').val(data.unit_size);
                         $('#order_price').val(data.price);
-                        $('#order_cat').val(data.cat);
                     }
                 }
         })
-})
-
-$(document).on('dblclick', '.t_row', function()
-{
-    data_id = $(this).attr('data-id');
-    setTimeout(function()
-    {
-        $('#btn_add').click();
-    },300)
-    
 })
 
 //add to orders
@@ -91,6 +94,7 @@ $(document).on('click','#btn_add', function()
     }
 })
 
+// function for quick adding quantity
 $(document).on('click','#add_qnty', function()
 {
     add_minus(1);
@@ -123,7 +127,52 @@ function add_minus(action)
         }
     }
 }
+//for clearing the previously selected item
+function clear_old_order_data()
+{
+    $('#prod_id').val("");
+    $('#order_name').val("");
+    $('#order_unit_size').val("");
+    $('#order_price').val(0);
+    $('#order_qnty').val(1)
+    $('#order_sub_total').val("")
+}
+//FINAL ADDING ORDERS, add order button inside the ordering modal
+function add_order() 
+{   
+    let order_id = parseInt($('#order_id').val());
+    let order_name = $('#order_name').val();
+    let order_unit_size = $('#order_unit_size').val();
+    let order_price = parseInt($('#order_price').val());
+    let order_qnty = parseInt($('#order_qnty').val());
 
+    let order_sub_total = parseInt($('#order_sub_total').val());
+
+    if(order_qnty == "" || order_qnty == 0)
+    {
+        alert('Quantity must be 1 or more.');
+    }
+    else
+    {
+        $.ajax(
+            {
+                url:'backend/add_order.php',
+                method:'post',
+                data:{order_id:order_id, order_name:order_name, order_unit_size:order_unit_size, order_price:order_price, order_qnty:order_qnty, order_sub_total:order_sub_total},
+                success:function(data)
+                {
+                    $('#msg').css('display','block');
+                    $('#msg').html(data).fadeIn(500).fadeOut(5000);
+                    load_temp_orders();
+                    load_order_total();
+                    clear_old_order_data();
+                    $('#ordering_modal').modal('toggle');
+                }
+            })
+    }
+}
+
+//for searching
 $(document).on('keyup','#inp_search', function(e)
 {
     if(e.key == "Enter" || e.keycode == 13)
@@ -225,41 +274,6 @@ function compute_sub_total()
     let order_qnty = parseInt($('#order_qnty').val());
     let order_sub_total = order_price * order_qnty;
     $('#order_sub_total').val(order_sub_total);
-}
-
-//ADDING ORDERS
-function add_order()
-{   
-    let order_id = parseInt($('#order_id').val());
-    let order_name = $('#order_name').val();
-    let order_unit_size = $('#order_unit_size').val();
-    let order_price = parseInt($('#order_price').val());
-    let order_qnty = parseInt($('#order_qnty').val());
-
-    let order_sub_total = parseInt($('#order_sub_total').val());
-
-    if(order_qnty == "" || order_qnty == 0)
-    {
-        alert('Quantity must be 1 or more.');
-    }
-    else
-    {
-        $.ajax(
-            {
-                url:'backend/add_order.php',
-                method:'post',
-                data:{order_id:order_id, order_name:order_name, order_unit_size:order_unit_size, order_price:order_price, order_qnty:order_qnty, order_sub_total:order_sub_total},
-                success:function(data)
-                {
-                    $('#msg').css('display','block');
-                    $('#msg').html(data).fadeIn(500).fadeOut(5000);
-                    load_temp_orders();
-                    load_order_total();
-                    $('#order_qnty').val("1")
-                    $('#ordering_modal').modal('toggle');
-                }
-            })
-    }
 }
 
 let temp_order_data_id = '';

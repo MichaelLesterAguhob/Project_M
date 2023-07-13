@@ -33,7 +33,7 @@
             margin-right: 2.5%;
         }
         #btn_search{
-            width: 30%;
+            width: 30%; 
             margin-right: 2.5%;
         }
         @media (max-width:300px){

@@ -83,8 +83,8 @@
             <div class="modal-content">
                 <div class="modal-body">
                 <h3 class="text-center">Add Order(s)</h3>
-                <input type="hidden" id="prod_id">
-                <input type="hidden" id="order_id">
+                    <input type="hidden" id="prod_id">
+                    <input type="hidden" id="order_id"> 
                 <table class="table table-borderless table-hover modal_table">
                     <tr>
                         <td>Description</td>
