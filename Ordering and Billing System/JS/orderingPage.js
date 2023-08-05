@@ -977,11 +977,6 @@ $('#side_cat').on('click', function()
     }
 })
 
-$('.close_cat_icon').on('click',function()
-{
-    $('#side_cat').click();
-})
-
 // order summary
 let stats2 = 0;
 $('#side_order').on('click', function()

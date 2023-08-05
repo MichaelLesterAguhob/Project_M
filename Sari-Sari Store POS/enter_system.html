@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passcode to Enter to the System</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .input_area{
+            height: 400px;
+            max-width: 50%;
+            margin: auto;
+            margin-top: 15%;
+            background-color: blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 5px 5px 25px 15px;
+        }
+
+        .input_field{
+            height: 40px;
+            font-size: 25px;
+            width: 90%;
+        }
+
+        .btn_enter{
+            font-size: 20px;
+            min-height: 40px;
+            min-width: 100px;
+            background-color: lime;
+            /* border: 1px solid black; */
+            border-radius: 5px;
+        }   
+
+        @media (max-width:500px)
+        {
+            .input_area{
+            max-height: 500px;
+            max-width: 90%;
+            margin-top: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="input_area">
+        <h1 style="color: aliceblue;">ENTER PASSCODE TO ENTER TO THIS SYSTEM</h1>
+        <br>
+        <input type="number" id="input_field" class="input_field" placeholder="Enter here..">
+        <br><br>
+        <button id="btn_enter" class="btn_enter" onclick="enter_system();">Enter</button>
+        <p class="message" style="color: orange; font-size: larger;"></p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        function enter_system()
+        {
+            let entered = $('#input_field').val();
+            if(entered == 113333)
+            {
+                $('#input_field').val("");
+                window.location.href="main_page.php";
+            }
+            else
+            {
+                $('.message').html("Incorrect Passcode!").fadeIn(500).fadeOut(2000);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -124,6 +124,43 @@ a{
     }
 }
 
+/* Skills Tab */
+.skills_tab h1{
+    letter-spacing: 7px;
+}
+.skills_container{
+    height: 100%;
+    overflow: auto;
+}
+.row_skills_tab{
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+.col_skills_tab{
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+.skills_img{
+    width:150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 2px rgb(22, 97, 128);
+}
+@media (max-width: 389px){
+    .skills_img{
+        width:90px;
+        height: 90px;
+    }
+}
+
+
+
+
+
+
 /* FOOTER */
 #footer{ 
     text-align: center;

@@ -166,7 +166,7 @@ else
         </div>
             <!--||||||||||||||||||||||||  CATEGORY ||||||||||||||||||||||-->
             <div class="col-lg-2 text-center mb-5" id="category">
-                <div class="mt-2 mb-4 close_cat"><i class="fa-sharp fa-solid fa-circle-xmark close_cat_icon"></i></div>
+                <div class="mt-2 mb-4 close_cat"><hr></div>
                 <div class="card mb-3 text-dark text-center " style="width: 80%;">
 
                     <div class="card-header bg-secondary text-light">
