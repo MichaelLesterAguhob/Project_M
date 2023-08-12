@@ -357,7 +357,7 @@ else
                                     <button type="button" id="cancel" class="btn btn-lg btn-danger" style="width:90%;" data-bs-dismiss="modal">CANCEL</button>
                                 </div>
 
-                            </form>
+                            </form> 
                         </div>
 
                     </div>

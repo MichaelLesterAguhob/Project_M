@@ -43,3 +43,8 @@ function show_resume()
         $('.nav_toggler').click();
     }
 }
+
+$(document).on('click','.sweeteaboba', function()
+{
+   window.open('Ordering and Billing System/orderingPage.php','_blank');
+})

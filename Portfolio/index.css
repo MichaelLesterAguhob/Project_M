@@ -162,14 +162,25 @@ a{
 /* PROJECTS TAB */
 .projects_tab{
     height: 95vh;
-    overflow: hidden;
+    overflow: auto;
+}
+.lang_used{
+    padding: 5px;
+    background-color: navy;
 }
 .proj_imgs_cont{
-    height: 90%;
+    height: 80vh;
     border: 2px solid white;
+    overflow: auto;
+}
+.projects_name{
+    margin-top: 3px;
+    padding: 5px;
+    background-color: darkgreen;
+    width: 99%;
 }
 .proj_imgs{
-    height: 88%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,13 +191,10 @@ a{
     height: 100%;
     margin-bottom: 10px;
 }
-.projects_name{
 
+.sweeteaboba:hover{
+    cursor: pointer;
 }
-
-
-
-
 /* FOOTER */
 #footer{ 
     text-align: center;
