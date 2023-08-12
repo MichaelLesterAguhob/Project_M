@@ -123,7 +123,10 @@ a{
         }
     }
 }
-
+.tabs{
+    height: 92vh;
+    display: none;
+}
 /* Skills Tab */
 .skills_tab h1{
     letter-spacing: 7px;
@@ -156,7 +159,30 @@ a{
     }
 }
 
+/* PROJECTS TAB */
+.projects_tab{
+    height: 95vh;
+    overflow: hidden;
+}
+.proj_imgs_cont{
+    height: 90%;
+    border: 2px solid white;
+}
+.proj_imgs{
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+.project_images{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+.projects_name{
 
+}
 
 
 
@@ -188,8 +214,4 @@ a{
     right: 15px;
 }
 
-/* page tabs switching */
-.tabs{
-    height: 92vh;
-    display: none;
-}
+
