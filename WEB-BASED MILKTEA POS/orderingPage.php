@@ -1,7 +1,7 @@
 <?php
 session_start();
 $user = "";
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['username'])) { 
     header('location:login.php');
 }
 
@@ -68,7 +68,7 @@ else
 
                 <div class="item">
                     <a target="_self" href="product.php">Product</a>
-                </div>
+                </div> 
 
                 <div class="item">
                     <a href="accounts.php"><i class="fa-solid fa-user"></i></a>
@@ -180,7 +180,7 @@ else
                             </tbody>
                         </table>
                     </div>
-
+ 
                     <div class="card-footer" id="categoryFooter" style="display: none;">
                         <button class="btn btn-success btn-lg" id="viewAll">View All</button>
                     </div>

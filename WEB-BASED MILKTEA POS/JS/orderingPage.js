@@ -961,14 +961,14 @@ function backToOrdering(action)
 let stats = 0;
 $('#side_cat').on('click', function()
 {
-    if(stats == 0)
+    if(stats == 0 && $(window).width() < 991)
     {
         $('#category').css('display','inline-block');
         stats = 1;
         $('.gt').css('display', 'none');
         $('.lt').css('display', 'flex');
     }
-    else
+    else if($(window).width() < 991)
     {
         $('#category').css('display','none');
         stats = 0;
@@ -981,14 +981,14 @@ $('#side_cat').on('click', function()
 let stats2 = 0;
 $('#side_order').on('click', function()
 {
-    if(stats2 == 0)
+    if(stats2 == 0 && $(window).width() < 991)
     {
         $('#order_summary').css('display','inline-block');
         stats2 = 1;
         $('.osGt').css('display', 'flex');
         $('.osLt').css('display', 'none');
     }
-    else
+    else if($(window).width() < 991)
     {
         $('#order_summary').css('display','none');
         stats2 = 0;

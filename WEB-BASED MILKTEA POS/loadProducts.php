@@ -41,7 +41,7 @@
 
         while($row = mysqli_fetch_assoc($result))
         {
-           $productsData .= '
+           $productsData .= ' 
                         <div class="card mb-3 text-dark text-center" style="width: 15rem; max-height: 18rem;" id="productCardDisplay"
                         data-id="'.$row['ID'].'"
                         data-name="'.$row['names'].'"

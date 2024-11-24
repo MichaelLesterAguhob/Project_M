@@ -4,7 +4,7 @@ global $con;
 $msg = "";
 
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = $_POST['password']; 
 
 if($username != "" && $password != "")
 {

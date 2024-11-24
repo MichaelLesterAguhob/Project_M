@@ -2,7 +2,7 @@
 include_once ('includes/connection.php');
 
 try
-{   
+{    
     global $con;
     $prodName = strtoupper($_POST['productName']);
     $category = strtoupper($_POST['productCategory']);
